@@ -1,0 +1,1530 @@
+Resetting in 3 seconds....
+resetting ...
+Secure key does not exist
+
+EN7523DRAMC V0.5
+dram_type = 5, speed = 1866
+Final Impdance Cal Result: OCDP:0x14, OCDN:0x17, ODTP:0x6, ODTN:0x6
+DDR1866 PLL setting init
+[Dramc] PCDDR3 AC Timing update 
+Fire MRW command...
+ModeReg.2, value.0x20 done
+Fire MRW command...
+ModeReg.3, value.0x0 done
+Fire MRW command...
+ModeReg.1, value.0x6 done
+Fire MRW command...
+ModeReg.0, value.0x1114 done
+Fire MRW command...
+ModeReg.1, value.0x86 done
+Fire MRW command...
+ModeReg.1, value.0x6 done
+Calculate size.
+DRAM size=512MB
+
+
+U-Boot 2023.07.02-OpenWrt-r24232-539228933c (Jan 08 2026 - 18:01:56 +0000)
+
+CPU:   Airoha EN7562DT
+DRAM:  496 MiB
+Core:  12 devices, 8 uclasses, devicetree: fit
+spi-nand: spi_nand spinand@0: Micron SPI NAND was found.
+spi-nand: spi_nand spinand@0: 256 MiB, block size: 128 KiB, page size: 2048, OOB size: 128
++ 0x000000000000-0x000010000000 : "spi-nand0"
+  + 0x000000000000-0x000000100000 : "u-boot"
+  + 0x000000100000-0x000010000000 : "ubi"
+Loading Environment from UBI... ubi0: default fastmap pool size: 100
+ubi0: default fastmap WL pool size: 50
+ubi0: attaching mtd2
+ubi0: scanning is finished
+ubi0: attached mtd2 (name "ubi", size 255 MiB)
+ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+ubi0: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+ubi0: VID header offset: 2048 (aligned 2048), data offset: 4096
+ubi0: good PEBs: 2040, bad PEBs: 0, corrupted PEBs: 0
+ubi0: user volume: 10, internal volumes: 1, max. volumes count: 128
+ubi0: max/mean erase counter: 2/0, WL threshold: 4096, image sequence number: 1202214982
+ubi0: available PEBs: 744, total reserved PEBs: 1296, PEBs reserved for bad PEB handling: 40
+Read 126976 bytes from volume env1 to 9e6dff40
+Read 126976 bytes from volume env2 to 9e6fef80
+OK
+In:    serial@1fbf0000
+Out:   serial@1fbf0000
+Err:   serial@1fbf0000
+Net:   eth0: en75xx-eth
+apply matching dtb: E655_R1
+Hit any key to stop autoboot:  0 
+Saving Environment to UBI... UBI partition 'ubi' already selected
+Writing to redundant UBI... done
+OK
+Read 4 bytes from volume rootfs2 to 80500000
+Detected squashfs.
+No size specified -> Using max size (3555328)
+Read 3555328 bytes from volume boot2 to 81800000
+## Loading kernel from FIT Image at 81800000 ...
+   Using 'E655_R1' configuration
+   Trying 'kernel-1' kernel subimage
+     Description:  ARM OpenWrt Linux-dev_iopsys_eu_airoha_linux_git-e4cbbae346be39a5e8fb90f87a6b370fd94fed2e
+     Type:         Kernel Image
+     Compression:  lzma compressed
+     Data Start:   0x81802000
+     Data Size:    3429532 Bytes = 3.3 MiB
+     Architecture: ARM
+     OS:           Linux
+     Load Address: 0x80088000
+     Entry Point:  0x80088000
+     Hash algo:    crc32
+     Hash value:   759cf56e
+     Hash algo:    sha1
+     Hash value:   d71e2cd12f2cddc58739233136a5ba16ff9d4977
+   Verifying Hash Integrity ... crc32+ sha1+ OK
+## Loading fdt from FIT Image at 81800000 ...
+   Using 'E655_R1' configuration
+   Trying 'fdt-E655_R1' fdt subimage
+     Description:  ARM OpenWrt E655_R1 device tree
+     Type:         Flat Device Tree
+     Compression:  uncompressed
+     Data Start:   0x81b4c000
+     Data Size:    13701 Bytes = 13.4 KiB
+     Architecture: ARM
+     Load Address: 0x9e400000
+     Hash algo:    crc32
+     Hash value:   1fa0f328
+     Hash algo:    sha1
+     Hash value:   354cad95501d85a86411c1e0b5308e2a15766fea
+   Verifying Hash Integrity ... crc32+ sha1+ OK
+   Loading fdt from 0x81b4c000 to 0x9e400000
+## Loading fdt from FIT Image at 81800000 ...
+   Trying 'fdt-tapir-image-version' fdt subimage
+     Description:  ARM OpenWrt tapir-image-version device tree overlay
+     Type:         Flat Device Tree
+     Compression:  uncompressed
+     Data Start:   0x81b54000
+     Data Size:    478 Bytes = 478 Bytes
+     Architecture: ARM
+     Load Address: 0x9e406b84
+     Hash algo:    crc32
+     Hash value:   20d32160
+     Hash algo:    sha1
+     Hash value:   e6ebb3709553ad91d242ef7cd8faf68abd9ac3ed
+   Verifying Hash Integrity ... crc32+ sha1+ OK
+   Booting using the fdt blob at 0x9e400000
+Working FDT set to 9e400000
+   Uncompressing Kernel Image
+   Loading Device Tree to 9e713000, end 9e7196c6 ... OK
+Working FDT set to 9e713000
+   Loading Device Tree to 9e709000, end 9e7126c6 ... OK
+Working FDT set to 9e709000
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 5.4.55 (dev@runner-zu3ysmoqv-project-348-concurrent-0) (gcc version 12.3.0 (OpenWrt GCC 12.3.0 r24232-539228933c)) #0 SMP Thu Jan 8 14:43:32 2026
+[    0.000000] CPU: ARMv7 Processor [410fd034] revision 4 (ARMv7), cr=10c5383d
+[    0.000000] CPU: div instructions available: patching division code
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] OF: fdt: Machine model: Aura-E655-DVT
+[    0.000000] Malformed early option 'earlycon'
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.1 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: MIGRATE_INFO_TYPE not supported.
+[    0.000000] psci: SMC Calling Convention v1.0
+[    0.000000] [c08014ec]npu_pkt_buf_addr=9d109000:9d109000
+[    0.000000] npu_pkt_buffer memblock_alloc:9d109000,buf_size=1600000
+percpu: Embedded 15 pages/cpu s29964 r8192 d23284 u61440
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 129344
+[    0.000000] Kernel command line: console=ttyS0,115200n8 earlycon qdma_init=33 serdes_sel=3 mtdparts=spi_nand:1M(u-boot),-(ubi) ubi.mtd=ubi ubi.block=0,rootfs2 rootfstype=squashfs root=/dev/ubiblock0_5 ethaddr=00:E0:92:00:01:40
+[    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes, linear)
+[    0.000000] mem auto-init: stack:all, heap alloc:off, heap free:off
+[    0.000000] Memory: 474540K/522496K available (7168K kernel code, 243K rwdata, 1564K rodata, 1024K init, 272K bss, 47956K reserved, 0K cma-reserved, 0K highmem)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.000000] rcu: Hierarchical RCU implementation.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 64
+[    0.000000] GICv3: 256 SPIs implemented
+[    0.000000] GICv3: 0 Extended SPIs implemented
+[    0.000000] GICv3: Distributor has no Range Selector support
+[    0.000000] GICv3: 16 PPIs implemented
+[    0.000000] GICv3: no VLPI support, no direct LPI support
+[    0.000000] GICv3: CPU0: found redistributor 0 region 0:0x09080000
+[    0.000000] random: get_random_bytes called from start_kernel+0x2c4/0x3f4 with crng_init=0
+[    0.000000] arch_timer: cp15 timer(s) running at 25.00MHz (virt).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x5c40939b5, max_idle_ns: 440795202646 ns
+[    0.000004] sched_clock: 56 bits at 25MHz, resolution 40ns, wraps every 4398046511100ns
+[    0.000011] Switching to timer-based delay loop, resolution 40ns
+[    0.000108] Calibrating delay loop (skipped), value calculated using timer frequency.. 50.00 BogoMIPS (lpj=250000)
+[    0.000118] pid_max: default: 32768 minimum: 301
+[    0.000238] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.000246] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.000863] CPU: Testing write buffer coherency: ok
+[    0.001135] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.001512] Setting up static identity map for 0x80100000 - 0x80100060
+[    0.001594] rcu: Hierarchical SRCU implementation.
+[    0.001729] gic-its@09020000: unable to locate ITS domain
+[    0.001926] smp: Bringing up secondary CPUs ...
+[    0.016765] GICv3: CPU1: found redistributor 1 region 0:0x090a0000
+[    0.016795] CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+[    0.016914] smp: Brought up 1 node, 2 CPUs
+[    0.016928] SMP: Total of 2 processors activated (100.00 BogoMIPS).
+[    0.016933] CPU: All CPU(s) started in SVC mode.
+[    0.019546] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.019566] futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+[    0.019690] pinctrl core: initialized pinctrl subsystem
+[    0.019981] NET: Registered protocol family 16
+[    0.020243] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    0.021432] No ATAGs?printk: console [pstore-1] enabled
+[    0.225939] pstore: Registered ramoops as persistent store backend
+[    0.226078] ramoops: using 0x80000@0x8ff80000, ecc: 16
+[    0.232406] 
+[    0.232406] l2c_sram_size:0x0
+[    0.235782] Initializing Ecnt Event Netlink Socket
+[    0.235961] Initializing Econet Event Netlink Socket nl_sk = (ptrval)
+[    0.239365] iommu: Default domain type: Translated 
+[    0.239660] usbcore: registered new interface driver usbfs
+[    0.239766] usbcore: registered new interface driver hub
+[    0.239955] usbcore: registered new device driver usb
+[    0.240552] NET: Registered protocol family 8
+[    0.240699] NET: Registered protocol family 20
+[    0.241070] clocksource: Switched to clocksource arch_sys_counter
+[    0.241805] thermal_sys: Registered thermal governor 'step_wise'NET: Registered protocol family 2
+[    0.242567] tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 6144 bytes, linear)
+[    0.242737] TCP established hash table entries: 4096 (order: 2, 16384 bytes, linear)
+[    0.242912] TCP bind hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    0.243044] TCP: Hash tables configured (established 4096 bind 4096)
+[    0.243250] UDP hash table entries: 256 (order: 1, 8192 bytes, linear)
+[    0.243405] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes, linear)
+[    0.243621] NET: Registered protocol family 1
+[    0.243788] PCI: CLS 0 bytes, default 64
+[    0.244130] SGMII_Version : A7523.00.06
+[    0.244249] sgmii: pon_sgmii_init
+[    0.271068] enable!
+[    0.271145] sgmii: sgmii_serdes_sel: exit!
+[    0.271593] SGMII_Version : A7523.00.06
+[    0.271678] sgmii probe init
+[    0.271861] sgmii:int_name: sgmii_pcie0
+[    0.271939] sgmii:int_id: 0
+[    0.272168] sgmii:int_register: inin!
+[    0.272311] sgmii:sgmii->pcs1_base= e087b100
+[    0.272386] sgmii:sgmii->pcs2_base= e087da00
+[    0.272460] sgmii:sgmii->an_base=   e0901000
+[    0.272596] sgmii:sgmii->ra_base=   e0903600
+[    0.272669] sgmii:sgmii->phya_base=   e0905c00
+[    0.272744] sgmii:int_register: exit!
+[    0.272880] sgmii: init
+[    0.272954] sgmii: sgmii_serdes_sel
+[    0.273026] sgmii: pcie0: close!
+[    0.273164] sgmii: sgmii_serdes_sel: exit!
+[    0.273239] sgmii: init_exit
+[    0.273313] sgmii probe init exit
+[    0.273461] SGMII_Version : A7523.00.06
+[    0.273600] sgmii probe init
+[    0.273712] sgmii:int_name: sgmii_pcie1
+[    0.273788] sgmii:int_id: 1
+[    0.274059] sgmii:int_register: inin!
+[    0.274139] sgmii:sgmii->pcs1_base= e0907100
+[    0.274214] sgmii:sgmii->pcs2_base= e0909a00
+[    0.274350] sgmii:sgmii->an_base=   e090b000
+[    0.274424] sgmii:sgmii->ra_base=   e090d600
+[    0.274499] sgmii:sgmii->phya_base=   e090fc00
+[    0.274635] sgmii:int_register: exit!
+[    0.274708] sgmii: init
+[    0.274782] sgmii: sgmii_serdes_sel
+[    0.274917] sgmii: pcie1: close!
+[    0.301072] sgmii: sgmii_serdes_sel: exit!
+[    0.301152] sgmii: init_exit
+[    0.301289] sgmii probe init exit
+[    0.301460] SGMII_Version : A7523.00.06
+[    0.301536] sgmii probe init
+[    0.301655] sgmii:int_name: sgmii_usb0
+[    0.301793] sgmii:int_id: 2
+[    0.302023] sgmii:int_register: inin!
+[    0.302103] sgmii:sgmii->pcs1_base= e0911100
+[    0.302239] sgmii:sgmii->pcs2_base= e0913a00
+[    0.302314] sgmii:sgmii->an_base=   e0915000
+[    0.302387] sgmii:sgmii->ra_base=   e0917600
+[    0.302524] sgmii:sgmii->phya_base=   e0919c00
+[    0.302597] sgmii:int_register: exit!
+[    0.302732] sgmii: init
+[    0.302806] sgmii: sgmii_serdes_sel
+[    0.302879] sgmii: usb0: enable!
+[    0.302956] sgmii: sgmii_serdes_sel: exit!
+[    0.361061] sgmii: int_init called
+[    0.391061] sgmii: sync_int exit
+[    0.421060] sgmii: init_exit
+[    0.421198] sgmii probe init exit
+[    0.422436] irq-0: 109 irq-1: 110 [crypto_k] res->name:crypto_k@1fb70000
+[    0.422837] [crypto_k] res->start:0x1fb70000 ===
+[    0.422975] [crypto_k] res->end:0x1fb70803 ===
+[    0.423050] [crypto_k] ecnt_crypto_k->base:0xe0973000
+[    0.423511] test_uc:(ptrval) test_c:(ptrval) cpu_top->base:(ptrval)
+[    0.423673] [apb_timer] ecnt_timer_drv_probe
+[    0.423823] [timer] ecnt_timer->irq: 79
+[    0.423959] [timer] res->name:apb_timer1@1fbf0100
+[    0.424253] 
+[    0.424253] i2c_slave init(ecnt_i2c_slave_drv_probe) done
+[    0.424669] 7523 Thermal Sensor address probe done
+[    0.424750] iddq = 51
+[    0.424897] [thermal] thermal_phy->irq: 119
+[    0.425139] [i2s] ecnt_i2s_drv_probe
+[    0.426001] workingset: timestamp_bits=14 max_order=17 bucket_order=3
+[    0.431268] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.431468] jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+[    0.462100] io scheduler mq-deadline registered
+[    0.462188] io scheduler kyber registered
+[    0.463103] en7523-pctl_probe 1fa20210.pinctrl: initialised Airoha EN7523 pinctrl driver
+[    0.463548] GPIO line 25 (DECT on) hogged as output/high
+[    0.463978] gpio gpiochip1: (1fbf0270.gpio): detected irqchip that is shared with multiple gpiochips: please fix the driver.
+[    0.464435] PCIe driver version: 7523.0.20210201
+[    0.464530] PCIe ref clk init.
+[    0.465749] ===EN7523 PCIe initmtk-pcie 1fa91000.pcie: pcie rc 0 linkup success
+[    0.823922] mtk-pcie 1fa91000.pcie: pcie rc 1 linkup success
+[    0.824062] 
+[    0.824062] ===============PCIe check===tmp_reg=========81014c3===========
+[    0.824261] mtk-pcie 1fa91000.pcie: PCI host bridge to bus 0000:00
+[    0.824408] pci_bus 0000:00: root bus resource [??? 0x00000000 flags 0x0]
+[    0.824549] pci_bus 0000:00: root bus resource [mem 0x20000000-0x2fffffff]
+[    0.824628] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.824796] pci 0000:00:00.0: [14c3:0810] type 01 class 0x060400
+[    0.825184] pci 0000:00:01.0: [14c3:0811] type 01 class 0x060400
+[    0.826375] PCI: bus0: Fast back to back transfers disabled
+[    0.826462] pci 0000:00:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[    0.826612] pci 0000:00:01.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[    0.826965] pci 0000:01:00.0: [14c3:7915] type 00 class 0x000280
+[    0.827326] pci 0000:01:00.0: reg 0x10: [mem 0x00000000-0x000fffff 64bit pref]
+[    0.827570] pci 0000:01:00.0: reg 0x18: [mem 0x00000000-0x00003fff 64bit pref]
+[    0.827751] pci 0000:01:00.0: reg 0x20: [mem 0x00000000-0x00000fff 64bit pref]
+[    0.828532] pci 0000:01:00.0: supports D1 D2
+[    0.828610] pci 0000:01:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    0.828885] pci 0000:01:00.0: 2.000 Gb/s available PCIe bandwidth, limited by 2.5 GT/s x1 link at 0000:00:00.0 (capable of 4.000 Gb/s with 5 GT/s x1 link)
+[    0.830097] PCI: bus1: Fast back to back transfers disabled
+[    0.830244] pci_bus 0000:01: busn_res: [bus 01-ff] end is updated to 01
+[    0.830526] pci 0000:02:00.0: [14c3:7915] type 00 class 0x000280
+[    0.830948] pci 0000:02:00.0: reg 0x10: [mem 0x00000000-0x000fffff 64bit pref]
+[    0.831157] pci 0000:02:00.0: reg 0x18: [mem 0x00000000-0x00003fff 64bit pref]
+[    0.831402] pci 0000:02:00.0: reg 0x20: [mem 0x00000000-0x00000fff 64bit pref]
+[    0.832189] pci 0000:02:00.0: supports D1 D2
+[    0.832268] pci 0000:02:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    0.832544] pci 0000:02:00.0: 2.000 Gb/s available PCIe bandwidth, limited by 2.5 GT/s x1 link at 0000:00:01.0 (capable of 4.000 Gb/s with 5 GT/s x1 link)
+[    0.833771] PCI: bus2: Fast back to back transfers disabled
+[    0.833856] pci_bus 0000:02: busn_res: [bus 02-ff] end is updated to 02
+[    0.834020] pci 0000:00:00.0: BAR 8: assigned [mem 0x20000000-0x201fffff]
+[    0.834163] pci 0000:00:01.0: BAR 8: assigned [mem 0x20200000-0x203fffff]
+[    0.834246] pci 0000:01:00.0: BAR 0: assigned [mem 0x20000000-0x200fffff 64bit pref]
+[    0.834469] pci 0000:01:00.0: BAR 2: assigned [mem 0x20100000-0x20103fff 64bit pref]
+[    0.834691] pci 0000:01:00.0: BAR 4: assigned [mem 0x20104000-0x20104fff 64bit pref]
+[    0.834851] pci 0000:00:00.0: PCI bridge to [bus 01]
+[    0.834996] pci 0000:00:00.0:   bridge window [mem 0x20000000-0x201fffff]
+[    0.835084] pci 0000:02:00.0: BAR 0: assigned [mem 0x20200000-0x202fffff 64bit pref]
+[    0.835307] pci 0000:02:00.0: BAR 2: assigned [mem 0x20300000-0x20303fff 64bit pref]
+[    0.835530] pci 0000:02:00.0: BAR 4: assigned [mem 0x20304000-0x20304fff 64bit pref]
+[    0.835687] pci 0000:00:01.0: PCI bridge to [bus 02]
+[    0.835829] pci 0000:00:01.0:   bridge window [mem 0x20200000-0x203fffff]
+[    0.838013] 
+[    0.838013]  mt7512_pcie_fixup: 0x1438 = 20000015 
+[    0.838013]  mt7512_pcie_rc0_retrain: 80 = 0145dc12 80 = 01608c12
+[    0.838013] RC0 Link Traing Result: 10120008
+[    0.838013] ===========RC0 set conf space INTx=============
+[    1.852278] 
+[    1.852278]  mt7512_pcie_fixup: 0x2438 = 20200015 
+[    1.852278]  mt7512_pcie_rc1_retrain: 80 = 0145dc12 80 = 01608c12
+[    1.852278] RC1 Link Traing Result: 10120008
+[    1.852278] ===========RC1 set conf space INTx=============
+[    2.869522] Serial: 8250/16550 driver, 2 ports, IRQ sharing disabled
+[    2.870303] printk: console [ttyS0] disabled
+[    2.870440] 1fbf0000.serial: ttyS0 at MMIO 0x1fbf0000 (irq = 94, base_baud = 115200) is a Airoha 16550
+[    4.054374] printk: console [ttyS0] enabled
+[    4.059069] 1fbf0300.serial: ttyS1 at MMIO 0x1fbf0300 (irq = 95, base_baud = 460800) is a Airoha 16550
+[    4.069037] data output always not ready 
+[    4.073365] airoha-trng 1faa1000.airoha_trng: [v1.01] registerd TRNG driver
+[    4.080617] random: fast init done
+[    4.084245] random: crng init done
+[    4.094858] brd: module loaded
+[    4.102384] loop: module loaded
+[    4.105885] en75xx-spi 1fa10000.spi_controller: found spi controller at 0x1fa10000
+[    4.113687] en75xx-spi 1fa10000.spi_controller: found nfi controller at 0x1fa11000
+[    4.121921] spi-nand spi0.0: Micron SPI NAND was found.
+[    4.127225] spi-nand spi0.0: 256 MiB, block size: 128 KiB, page size: 2048, OOB size: 128
+[    4.135604] 2 cmdlinepart partitions found on MTD device spi_nand
+[    4.141789] Creating 2 MTD partitions on "spi_nand":
+[    4.146885] 0x000000000000-0x000000100000 : "u-boot"
+[    4.153229] 0x000000100000-0x000010000000 : "ubi"
+[    4.371503] libphy: Fixed MDIO Bus: probed
+[    4.375677] PPP generic driver version 2.4.2
+[    4.380072] PPP BSD Compression module registered
+[    4.384876] PPP Deflate Compression module registered
+[    4.389995] NET: Registered protocol family 24
+[    4.394780] USB driver version: 7523.4.20210825
+[    4.401383] port 0 u2_slew_rate_cal_7523
+[    4.407368] FM_OUT value = 113(0x00000071)
+[    4.412598] SR calibration value = 5
+[    4.416234] port 1 u2_slew_rate_cal_7523
+[    4.421280] FM_OUT value = 113(0x00000071)
+[    4.426444] SR calibration value = 5
+[    7.461073] xhci-hcd 1fab0000.xhci: xHCI Host Controller
+[    7.466540] xhci-hcd 1fab0000.xhci: new USB bus registered, assigned bus number 1
+[    7.574301] xhci-hcd 1fab0000.xhci: irq 111, io mem 0x1fab0000
+[    7.580738] hub 1-0:1.0: USB hub found
+[    7.584624] hub 1-0:1.0: 2 ports detected
+[    7.589088] xhci-hcd 1fab0000.xhci: xHCI Host Controller
+[    7.594513] xhci-hcd 1fab0000.xhci: new USB bus registered, assigned bus number 2
+[    7.602213] usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+[    7.610736] hub 2-0:1.0: USB hub found
+[    7.614673] hub 2-0:1.0: 1 port detected
+[    7.619066] usbcore: registered new interface driver cdc_acm
+[    7.624891] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[    7.633041] usbcore: registered new interface driver usbserial_generic
+[    7.639715] usbserial: USB Serial support registered for generic
+[    7.645814] usbcore: registered new interface driver cypress_m8
+[    7.651883] usbserial: USB Serial support registered for DeLorme Earthmate USB
+[    7.659244] usbserial: USB Serial support registered for HID->COM RS232 Adapter
+[    7.666651] usbserial: USB Serial support registered for Nokia CA-42 V2 Adapter
+[    7.674113] usbcore: registered new interface driver ftdi_sio
+[    7.679936] usbserial: USB Serial support registered for FTDI USB Serial Device
+[    7.687696] i2c-mt7621 1fbf8000.mtk_i2c: I2C reset failed!
+[    7.693385] i2c-mt7621 1fbf8000.mtk_i2c: clock 400 kHz
+[    7.698799] watchdog: watchdog@0,0: driver supplied timeout (300) out of range
+[    7.706551] device-mapper: ioctl: 4.41.0-ioctl (2019-09-16) initialised: dm-devel@redhat.com
+[    7.715734] hidraw: raw HID events driver (C) Jiri Kosina
+[    7.721407] usbcore: registered new interface driver usbhid
+[    7.727054] usbhid: USB HID core driver
+[    7.731839] IPv4 over IPsec tunneling driver
+[    7.736675] ipt_CLUSTERIP: ClusterIP Version 0.8 loaded successfully
+[    7.743222] Initializing XFRM netlink socket
+[    7.747959] NET: Registered protocol family 10
+[    7.753350] Segment Routing with IPv6
+[    7.757324] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    7.764256] NET: Registered protocol family 17
+[    7.768858] NET: Registered protocol family 15
+[    7.773467] bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+[    7.786571] 8021q: 802.1Q VLAN Support v1.8
+[    7.790870] sctp: Hash tables configured (bind 512/512)
+[    7.796485] lib80211: common routines for IEEE802.11 drivers
+[    7.802320] Registering SWP/SWPB emulation handler
+[    7.809776] ubi0: attaching mtd1
+[    8.981156] ubi0: scanning is finished
+[    8.994481] ubi0: attached mtd1 (name "ubi", size 255 MiB)
+[    9.000109] ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+[    9.007139] ubi0: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+[    9.014004] ubi0: VID header offset: 2048 (aligned 2048), data offset: 4096
+[    9.021097] ubi0: good PEBs: 2040, bad PEBs: 0, corrupted PEBs: 0
+[    9.027261] ubi0: user volume: 10, internal volumes: 1, max. volumes count: 128
+[    9.034709] ubi0: max/mean erase counter: 2/0, WL threshold: 4096, image sequence number: 1202214982
+[    9.043978] ubi0: available PEBs: 746, total reserved PEBs: 1294, PEBs reserved for bad PEB handling: 40
+[    9.053952] ubi0: background thread "ubi_bgt0d" started, PID 71
+[    9.066181] block ubiblock0_5: created from ubi0:5(rootfs2)
+[    9.075282] VFS: Mounted root (squashfs filesystem) readonly on device 253:0.
+[    9.083646] Freeing unused kernel memory: 1024K
+[    9.111260] Run /sbin/init as init process
+[    9.393864] init: Console is alive
+[    9.397560] init: - watchdog -
+[   10.465201] kmodloader: loading kernel modules from /etc/modules-boot.d/*
+[   10.500280] bootr_en75xx: loading out-of-tree module taints kernel.
+[   10.507182] airoha-bootr 1fb00240.bootr: boot reason: POR
+[   10.521660] tcledctrl_stub - init
+[   10.529192] SCSI subsystem initialized
+[   10.548827] usbcore: registered new interface driver usb-storage
+[   10.560560] kmodloader: done loading kernel modules from /etc/modules-boot.d/*
+[   10.581542] init: - preinit -
+opconf: do_opconf_userconf
+Failed to connect to ubus
+Error: could not find property iowrt_image_version.
+[   13.901657] block ubiblock0_4: created from ubi0:4(rootfs1)
+[   13.962207] /dev/ubiblock0_4: Can't open blockdev
+mount: mounting /dev/ubiblock0_4 on /tmp/other_bank_mount failed: No such file or directory
+opconf: other bank version is 
+opconf: Unable to determine other bank version, but UBI flash detected - proceeding with migration
+[   14.287901] UBIFS (ubi0:7): default file-system created
+[   14.293941] UBIFS (ubi0:7): Mounting in unauthenticated mode
+[   14.299800] UBIFS (ubi0:7): background thread "ubifs_bgt0_7" started, PID 819
+[   14.357223] UBIFS (ubi0:7): UBIFS: mounted UBI device 0, volume 7, name "overlay2"
+[   14.364896] UBIFS (ubi0:7): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[   14.374945] UBIFS (ubi0:7): FS size: 32378880 bytes (30 MiB, 255 LEBs), journal size 1650688 bytes (1 MiB, 13 LEBs)
+[   14.385514] UBIFS (ubi0:7): reserved for root: 1529334 bytes (1493 KiB)
+[   14.392262] UBIFS (ubi0:7): media format: w5/r0 (latest is w5/r0), UUID 4051D758-8C8D-4C4E-AC8F-F088BE28F6AA, small LPT model
+opconf: Mounted current overlay partition
+opconf: backup file /tmp/opconf_overlay/data/upper/sysupgrade.tgz does not exist
+[   14.421448] UBIFS (ubi0:7): un-mount UBI device 0
+[   14.426250] UBIFS (ubi0:7): background thread "ubifs_bgt0_7" stops
+opconf: Unmounted current overlay
+Upgrade from U-Boot detected. Removing usr_data content!
+[   15.005805] UBIFS (ubi0:7): Mounting in unauthenticated mode
+[   15.029634] UBIFS (ubi0:7): background thread "ubifs_bgt0_7" started, PID 940
+[   15.094125] UBIFS (ubi0:7): UBIFS: mounted UBI device 0, volume 7, name "overlay2"
+[   15.101865] UBIFS (ubi0:7): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[   15.111855] UBIFS (ubi0:7): FS size: 32378880 bytes (30 MiB, 255 LEBs), journal size 1650688 bytes (1 MiB, 13 LEBs)
+[   15.122425] UBIFS (ubi0:7): reserved for root: 1529334 bytes (1493 KiB)
+[   15.129167] UBIFS (ubi0:7): media format: w5/r0 (latest is w5/r0), UUID 4051D758-8C8D-4C4E-AC8F-F088BE28F6AA, small LPT model
+Wiping overlay (reason: upgrade from U-Boot).
+[   15.236695] UBIFS (ubi0:7): un-mount UBI device 0
+[   15.241519] UBIFS (ubi0:7): background thread "ubifs_bgt0_7" stops
+[   15.454266] UBIFS (ubi0:7): default file-system created
+[   15.460182] UBIFS (ubi0:7): Mounting in unauthenticated mode
+[   15.466110] UBIFS (ubi0:7): background thread "ubifs_bgt0_7" started, PID 1001
+[   15.523578] UBIFS (ubi0:7): UBIFS: mounted UBI device 0, volume 7, name "overlay2"
+[   15.531249] UBIFS (ubi0:7): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[   15.541300] UBIFS (ubi0:7): FS size: 32378880 bytes (30 MiB, 255 LEBs), journal size 1650688 bytes (1 MiB, 13 LEBs)
+[   15.551868] UBIFS (ubi0:7): reserved for root: 1529334 bytes (1493 KiB)
+[   15.558612] UBIFS (ubi0:7): media format: w5/r0 (latest is w5/r0), UUID E471ACE3-6E0B-4441-AD8D-A9309BE8425A, small LPT model
+[   15.920690] procd: - early -
+[   15.923876] procd: - watchdog -
+Failed to connect to ubus
+[   16.511262] procd: - watchdog -
+[   16.514778] procd: - ubus -
+[   16.694991] procd: - init -
+[   16.856556] tccicmd: module license 'unspecified' taints kernel.
+[   16.862755] Disabling lock debugging due to kernel taint
+[   16.868803] tccicmd V1.1.0.0 (2026:01:08-17:59:06)
+[   16.891115] (gdump_mode_sel): GDUMP sel has switch to 3
+[   16.896579] ECNT_HOOK_ERROR occur. ECNT_API_XPON_MODE_GET:215
+[   16.913790] ifc_set_action: cpu:1, nbq:1
+[   16.917882] ifc_set_action: cpu:1, nbq:1
+[   16.921960] ifc_set_action: cpu:1, nbq:2
+[   16.925962] ifc_set_action: cpu:1, nbq:1
+[   16.930024] ifc_set_action: cpu:1, nbq:1
+[   16.934043] ifc_set_action: cpu:1, nbq:1
+[   16.938050] ifc_set_action: cpu:1, nbq:1
+[   16.942136] ifc_set_action: cpu:1, nbq:2
+[   16.946168] ifc_set_action: cpu:1, nbq:2
+[   16.950184] ifc_set_action: cpu:1, nbq:1
+[   16.954297] ifc_set_action: cpu:1, nbq:1
+[   16.958314] ifc_set_action: cpu:1, nbq:1
+[   16.962348] ifc_set_action: cpu:1, nbq:1
+[   16.966427] ifc_set_action: cpu:1, nbq:3
+[   16.970444] ifc_set_action: cpu:1, nbq:1
+[   16.974480] ifc_set_action: cpu:1, nbq:1
+[   16.978560] ifc_set_action: cpu:1, nbq:1
+[   16.982601] ifc_set_action: cpu:1, nbq:1
+[   16.986680] ifc_set_action: cpu:1, nbq:1
+[   16.990697] ifc_set_action: cpu:1, nbq:1
+[   16.994752] ifc_set_action: cpu:1, nbq:7
+[   16.999269] ifc_set_action: cpu:1, nbq:8
+[   17.016744] macType = 0
+[   17.019307] flashQdmaInit = 0x33
+[   17.050335] gpQdmaPriv->hwFwdBuffAddr = 0x1f6f0840, hwFwdBuffAddr = 0xdf6f0840
+[   17.117836] copy NPU binary:/lib/firmware/npu_rv32.bin(69384 Bytes) to 0xe0f80000
+[   17.174609] copy NPU binary:/lib/firmware/npu_data.bin(760 Bytes) to 0xe0c00000
+[C0]core freq at 333000000 Hz
+[C0]timer_init: Timer clk is running at 125 Mhz
+[C0]npu_gre_tunnel_tx_header_init L15 gre_tx_head_addr[0]=0x8400351c
+[C0]npu_gre_tunnel_tx_header_init L15 gre_tx_head_addr[1]=0x84003544
+[C0][NPU] ba_node_init...
+[C0]baNode_array_init
+[C0]counter_init:2
+[C0][NPU] queue_mutex_init...
+[C1]core1_main
+[C2]timer_isr  Store Value 1e903000, val[C2]core2_main
+[C2]do npu_enq_deq_init
+[C3]core3_main
+[C3]core3_main for npu tunnel offload v21
+[C3]npu bridge buf init sucess
+[   17.586531] [c0801478]npu_pkt_buf_addr=9d109000
+[   17.591238] npu_wifi_offload_get_pkt_buf_addr=9d109000
+[   17.596467] [c0801478]npu_pkt_buf_addr=9d109000
+[C0]wifi_mail_data->wifi_mail_private.npuPktBufAddr=9d109000, 9d109000
+[C0](core0_main) just return, because QDMA driver for ARM is not ready
+[   17.627833] ether.c:v1.00-NAPI 29.Mar.2015
+[   17.632118] eth0 (uninitialized): netif_napi_add() called with weight 128
+[   17.639074] eth0: FE MAC Ethernet address: 00:E0:92:00:01:40
+[   17.648496] Use Internal switch ,type 10
+[   17.658329] netlink init
+[   17.666927] tcPhyVerLookUp 2400 94A1 
+[   17.670680]  7523 Ge, 
+[   17.673230] , port_num = 0, ephy_addr = 9, ephy_addr_base = 0x9 
+[   17.689336]   GE Rext AnaCal Done! (5)(0x25)  
+[   17.694555]   GE Rext AnaCal Done! (5)(0x25)  
+[   17.713999]   GE R45 AnaCal zcal_idx(before table) (dec: 45) (hex: 0x2d) 
+[   17.721037]   GE R45 AnaCal Done! (cnt:13)(after table) ([7][6:0]:0x51) ([6:0]:0xd1) 
+[   17.741194]   GE R45 AnaCal zcal_idx(before table) (dec: 43) (hex: 0x2b) 
+[   17.748156]   GE R45 AnaCal Done! (cnt:11)(after table) ([7][6:0]:0x56) ([6:0]:0xd6) 
+[   17.767360]   GE R45 AnaCal zcal_idx(before table) (dec: 42) (hex: 0x2a) 
+[   17.774457]   GE R45 AnaCal Done! (cnt:10)(after table) ([7][6:0]:0x58) ([6:0]:0xd8) 
+[   17.793701]   GE R45 AnaCal zcal_idx(before table) (dec: 42) (hex: 0x2a) 
+[   17.800731]   GE R45 AnaCal Done! (cnt:10)(after table) ([7][6:0]:0x58) ([6:0]:0xd8) 
+[   17.817359]  GE Tx offset AnaCal Done! (5)(0x24)  
+[   17.826247]  GE Tx offset AnaCal Done! (2)(0x21)  
+[   17.837057]  GE Tx offset AnaCal Done! (4)(0x23)  
+[   17.844978]  GE Tx offset AnaCal Done! (1)(0x1)  
+[   17.869439]  GE Tx amp AnaCal Done! (15) (0x2f)
+[   17.892825]  GE Tx amp AnaCal Done! (16) (0x30)
+[   17.912380]  GE Tx amp AnaCal Done! (12) (0x2c)
+[   17.934752]  GE Tx amp AnaCal Done! (15) (0x2f)
+[   17.956605]  [tcPhyInit] in  [tcPhyInit] out , r31 = (9, 0x0) 
+[   18.018337] tcPhyVerLookUp 2400 94A1 
+[   18.022105]  7523 Ge, 
+[   18.024593] , port_num = 1, ephy_addr = 10, ephy_addr_base = 0x9 
+[   18.046686]   GE R45 AnaCal zcal_idx(before table) (dec: 43) (hex: 0x2b) 
+[   18.053679]   GE R45 AnaCal Done! (cnt:11)(after table) ([7][6:0]:0x56) ([6:0]:0xd6) 
+[   18.071949]   GE R45 AnaCal zcal_idx(before table) (dec: 41) (hex: 0x29) 
+[   18.078981]   GE R45 AnaCal Done! (cnt:9)(after table) ([7][6:0]:0x5b) ([6:0]:0xdb) 
+[   18.096220]   GE R45 AnaCal zcal_idx(before table) (dec: 40) (hex: 0x28) 
+[   18.103276]   GE R45 AnaCal Done! (cnt:8)(after table) ([7][6:0]:0x5e) ([6:0]:0xde) 
+[   18.120580]   GE R45 AnaCal zcal_idx(before table) (dec: 40) (hex: 0x28) 
+[   18.127583]   GE R45 AnaCal Done! (cnt:8)(after table) ([7][6:0]:0x5e) ([6:0]:0xde) 
+[   18.143172]  GE Tx offset AnaCal Done! (4)(0x23)  
+[   18.152013]  GE Tx offset AnaCal Done! (2)(0x2)  
+[   18.161793]  GE Tx offset AnaCal Done! (3)(0x3)  
+[   18.169624]  GE Tx offset AnaCal Done! (1)(0x1)  
+[   18.188619]  GE Tx amp AnaCal Done! (9) (0x29)
+[   18.202489]  GE Tx amp AnaCal Done! (6) (0x26)
+[   18.219104]  GE Tx amp AnaCal Done! (9) (0x29)
+[   18.236860]  GE Tx amp AnaCal Done! (10) (0x2a)
+[   18.258745]  [tcPhyInit] in  [tcPhyInit] out , r31 = (10, 0x0) 
+[   18.320574] tcPhyVerLookUp 2400 94A1 
+[   18.324347]  7523 Ge, 
+[   18.326840] , port_num = 2, ephy_addr = 11, ephy_addr_base = 0x9 
+[   18.347951]   GE R45 AnaCal zcal_idx(before table) (dec: 42) (hex: 0x2a) 
+[   18.354935]   GE R45 AnaCal Done! (cnt:10)(after table) ([7][6:0]:0x58) ([6:0]:0xd8) 
+[   18.373247]   GE R45 AnaCal zcal_idx(before table) (dec: 41) (hex: 0x29) 
+[   18.380280]   GE R45 AnaCal Done! (cnt:9)(after table) ([7][6:0]:0x5b) ([6:0]:0xdb) 
+[   18.398467]   GE R45 AnaCal zcal_idx(before table) (dec: 41) (hex: 0x29) 
+[   18.405518]   GE R45 AnaCal Done! (cnt:9)(after table) ([7][6:0]:0x5b) ([6:0]:0xdb) 
+[   18.424626]   GE R45 AnaCal zcal_idx(before table) (dec: 42) (hex: 0x2a) 
+[   18.431623]   GE R45 AnaCal Done! (cnt:10)(after table) ([7][6:0]:0x58) ([6:0]:0xd8) 
+[   18.446337]  GE Tx offset AnaCal Done! (3)(0x22)  
+[   18.455209]  GE Tx offset AnaCal Done! (2)(0x21)  
+[   18.464128]  GE Tx offset AnaCal Done! (2)(0x21)  
+[   18.472065]  GE Tx offset AnaCal Done! (1)(0x1)  
+[   18.487269]  GE Tx amp AnaCal Done! (5) (0x25)
+[   18.499324]  GE Tx amp AnaCal Done! (4) (0x24)
+[   18.519816]  GE Tx amp AnaCal Done! (13) (0x2d)
+[   18.536612]  GE Tx amp AnaCal Done! (9) (0x29)
+[   18.558370]  [tcPhyInit] in  [tcPhyInit] out , r31 = (11, 0x0) 
+[   18.620184] tcPhyVerLookUp 2400 94A1 
+[   18.623974]  7523 Ge, 
+[   18.626510] , port_num = 3, ephy_addr = 12, ephy_addr_base = 0x9 
+[   18.649638]   GE R45 AnaCal zcal_idx(before table) (dec: 44) (hex: 0x2c) 
+[   18.656690]   GE R45 AnaCal Done! (cnt:12)(after table) ([7][6:0]:0x53) ([6:0]:0xd3) 
+[   18.675915]   GE R45 AnaCal zcal_idx(before table) (dec: 42) (hex: 0x2a) 
+[   18.683056]   GE R45 AnaCal Done! (cnt:10)(after table) ([7][6:0]:0x58) ([6:0]:0xd8) 
+[   18.702320]   GE R45 AnaCal zcal_idx(before table) (dec: 42) (hex: 0x2a) 
+[   18.709320]   GE R45 AnaCal Done! (cnt:10)(after table) ([7][6:0]:0x58) ([6:0]:0xd8) 
+[   18.728576]   GE R45 AnaCal zcal_idx(before table) (dec: 42) (hex: 0x2a) 
+[   18.735566]   GE R45 AnaCal Done! (cnt:10)(after table) ([7][6:0]:0x58) ([6:0]:0xd8) 
+[   18.750265]  GE Tx offset AnaCal Done! (3)(0x22)  
+[   18.759207]  GE Tx offset AnaCal Done! (2)(0x21)  
+[   18.769061]  GE Tx offset AnaCal Done! (3)(0x22)  
+[   18.778896]  GE Tx offset AnaCal Done! (3)(0x22)  
+[   18.798012]  GE Tx amp AnaCal Done! (9) (0x29)
+[   18.820265]  GE Tx amp AnaCal Done! (15) (0x2f)
+[   18.841780]  GE Tx amp AnaCal Done! (14) (0x2e)
+[   18.862314]  GE Tx amp AnaCal Done! (13) (0x2d)
+[   18.884185]  [tcPhyInit] in  [tcPhyInit] out , r31 = (12, 0x0) 
+[   18.956539] macType = 0
+[   18.959064] flashQdmaInit = 0x33
+[   18.965973] gpQdmaPriv->hwFwdBuffAddr = 0x1f2f0840, hwFwdBuffAddr = 0xdf2f0840
+[   18.976337] fe resource init start
+[   18.984984] whnat_module_init(): module init and register callback for whnat
+[   18.992217] mt_wlan_hook_register:46 !!!!!
+[   18.996416] mt_wlan_hook_register:50 !!!!!
+[   19.000676] mt_wlan_hook_register:53 ops_priority=0 cur_priority=0 !!!!!
+[   19.007501] mt_wlan_hook_register:66 !!!!!
+[   19.011810] create whnat_ctrl ok!!!
+[   19.015452] wed_slot_map_get(): assign slot_id:0 for entry: 0!
+[   19.021483] wed_slot_map_get(): assign slot_id:1 for entry: 1!
+[   19.038777] Ralink HW NAT Module Enabled
+[   19.045989] you need to modify struct FoeEntryExtKernel in soft_dma.h			when you modifyied struct FoeEntryExt!SRAM_FOE_NUM=7, means PPE_FOE_NUM=512
+[   19.059517] HWNAT Module enabled with Type:L2B/IPv4/IPv6/DS-LITE/6RD, foeSize:64B, sram_foeNum:512, dram_foeNum:16384
+[   19.070449] IP check use Black List
+[   19.076922] EN7523 PPE SRAM HW default setting is 512 at 64byte, no need to set by sw
+[   19.097124] tso_lan: tso_v2.c [201]: dscpDmaAddr =9a420000
+[   19.104340] tso_lan: tso_v2.c [263]: diPtr->dscpIdx = 0
+[   19.109755] tso_lan: tso_v2.c [263]: diPtr->dscpIdx = 0
+[   19.115122] tso_proc_init.
+[   19.129889] eth0: starting interface.
+[   19.133776] netif_start_queue
+[   19.893276] UBIFS (ubi0:9): Mounting in unauthenticated mode
+[   19.992308] UBIFS (ubi0:9): UBIFS: mounted UBI device 0, volume 9, name "boarddata", R/O mode
+[   20.000979] UBIFS (ubi0:9): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[   20.011052] UBIFS (ubi0:9): FS size: 3047424 bytes (2 MiB, 24 LEBs), journal size 1015809 bytes (0 MiB, 6 LEBs)
+[   20.021281] UBIFS (ubi0:9): reserved for root: 143937 bytes (140 KiB)
+[   20.027793] UBIFS (ubi0:9): media format: w5/r0 (latest is w5/r0), UUID AB3DBFA4-E1A0-4C49-BA75-320B76F274E0, small LPT model
+[   20.103866] UBIFS (ubi0:99): default file-system created
+[   20.109921] UBIFS (ubi0:99): Mounting in unauthenticated mode
+[   20.133860] UBIFS (ubi0:99): background thread "ubifs_bgt0_99" started, PID 1973
+[   20.184283] UBIFS (ubi0:99): UBIFS: mounted UBI device 0, volume 99, name "usr_data"
+[   20.192207] UBIFS (ubi0:99): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+[   20.202355] UBIFS (ubi0:99): FS size: 15618048 bytes (14 MiB, 123 LEBs), journal size 1015809 bytes (0 MiB, 6 LEBs)
+[   20.212931] UBIFS (ubi0:99): reserved for root: 737678 bytes (720 KiB)
+[   20.219531] UBIFS (ubi0:99): media format: w5/r0 (latest is w5/r0), UUID 1B9E3FE3-AA19-4BCF-BA67-3C77899A4105, small LPT model
+[   21.563511] ecnt_wifi_eeprom: band0 uses art eeprom
+[   21.632543] ecnt_wifi_eeprom: Updating macaddr field in /tmp/wifi_band0_eeprom.bin
+[   21.680465] ecnt_wifi_eeprom: band1 uses art eeprom
+[   21.752211] ecnt_wifi_eeprom: Updating macaddr field in /tmp/wifi_band1_eeprom.bin
+crond[2192]: crond (busybox 1.36.1) started, log level 5
+[   24.171092] monitor value xxxxxxx 
+[   54.395483] kmodloader: loading kernel modules from /etc/modules.d/*
+[   54.437863] NET: Registered protocol family 38
+[   54.482798] tun: Universal TUN/TAP device driver, 1.6
+[   54.497661] l2tp_core: L2TP core driver, V2.0
+[   54.503918] l2tp_netlink: L2TP netlink interface
+[   54.511139] nat46: module (version 4c5beee236841724219598fabb1edc93d4f08ce5) loaded.
+[   54.525044] gre: GRE over IPv4 demultiplexor driver
+[   54.538149] ip_gre: GRE over IPv4 tunneling driver
+[   54.558588] ip6_gre: GRE over IPv6 tunneling driver
+[   54.648322] i2c /dev entries driver
+[   54.662841] fuse: init (API version 7.31)
+[   54.675880] usbcore: registered new interface driver cdc_wdm
+[   54.682968] Loading modules backported from Linux version v5.15.92-0-ge515b9902f5f
+[   54.690690] Backport generated by backports.git v5.15.92-1-0-gdfe0f60c
+[   54.699216] usbcore: registered new interface driver cp210x
+[   54.705678] usbserial: USB Serial support registered for cp210x
+[   54.764605] l2tp_ppp: PPPoL2TP kernel driver, V2.0
+[   54.871146] libphy: GPIO Bitbanged MDIO: probed
+[   55.034569] nf_conntrack_rtsp v0.7 loading
+[   55.050102] nf_nat_rtsp v0.7 loading
+[   55.055476] usbcore: registered new interface driver pl2303
+[   55.061246] usbserial: USB Serial support registered for pl2303
+[   55.068774] PPP MPPE Compression module registered
+[   55.074639] PPTP driver version 0.8.5
+[   55.079589] usbcore: registered new interface driver sierra
+[   55.085415] usbserial: USB Serial support registered for Sierra USB modem
+[   55.100909] wireguard: WireGuard 1.0.20220627 loaded. See www.wireguard.com for information.
+[   55.109453] wireguard: Copyright (C) 2015-2019 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.
+[   55.132353] xt_time: kernel timezone is -0000
+[   55.137630] usbcore: registered new interface driver cdc_eem
+[   55.144902] usbcore: registered new interface driver cdc_ether
+[   55.152704] usbcore: registered new interface driver cdc_ncm
+[   55.159209] usbcore: registered new interface driver cdc_subset
+[   55.184919] usbcore: registered new interface driver huawei_cdc_ncm
+[   55.226352] usbcore: registered new interface driver kalmia
+[   55.274429] irq: no irq domain found for interrupt-controller !
+[   55.280604] woe_enable_chk:120 error!!!
+[   55.284571] -->2) Error 2 opening /etc/woe_disable
+[   55.289595] npu_enable_chk:164 error!!!
+[   55.293542] npu npu_controller setting 
+[   55.293542]  default open npu  2 opening /etc/npu_enable
+[   55.302864] pci 0000:00:00.0: enabling device (0140 -> 0142)
+[   55.308686] mt7915e 0000:01:00.0: enabling device (0140 -> 0142)
+[   55.314995] mt7915_mmio_probe:1192 band=0 !!!
+[   55.319428] call HOSTDAPT WIFI HOOK  2G 
+[   55.323507] hostdapt_registe_wifitask 0
+[   55.327412] init 2G tasklet ! 
+[   55.442521] whnat_driver_init:264 call hook sys up & hif init !!!!!
+[   55.448929] whnat_cap_support:83 chip_id=30997 !!!!!
+[   55.453985] whnat_cap_support(): chip_id=7915 is in WHNAT support list
+[   55.460646] whnat_driver_init(): (efault) whnat is enable !!!
+[   55.466488] wifi_slot_get(): bus name=PCI Bus 0000:01, funid=0, get slot id=0
+[   55.473777] whnat_entry_acquire:106 slot_id = 0 !!!!!
+[   55.478966] whnat_entry_acquire(): PCIE SLOT:0, hook to WHNAT,entry id=0
+[   55.486878] wed_ring_init(): wed ring init result = 0
+[   55.509536] create wed ok!!!
+[   55.512573] wdma_init(): wdma(0) base addr=e0afe000
+[   55.517537] wdma_init(): wdma(0) irq[0]=83
+[   55.521785] wdma_init(): wdma(0) irq[1]=84
+[   55.525965] wdma_init(): wdma(0) irq[2]=85
+[   55.530593] wifi_chip_probe(): Chang CHIP IRQ: 81 to WHNAT IRQ: 89
+[   55.539967] wifi_slot_get(): bus name=PCI Bus 0000:01, funid=0, get slot id=0
+[   55.547264] wifi_slot_get(): bus name=PCI Bus 0000:01, funid=0, get slot id=0
+[   55.554632] whnat_probe(): probe fail since whnat is full!
+[   55.560273] whnat_dev0: probe of 1fa02000.wed2 failed with error -1
+[   55.567477] whnat_wed_ring_rx_update():614 index=0 val=95516000 !!!
+[   55.573923] whnat_wed_ring_rx_update():614 index=4 val=200 !!!
+[   55.579826] whnat_wed_ring_rx_update():614 index=8 val=1ff !!!
+[   55.587342] wdma_dma_ctrl(): WDMA_GLO_CFG=40000450
+[   55.592240] =========whnat_hal_wdma_init :ECNT WED_WDMA_CFG_BASE = 1fa00000 
+[   55.599422] whnat_hal_wdma_ring_init(): configure ring 0 setting
+[   55.605528] whnat_hal_wdma_ring_init(): wed:b543388e,wdma:da496980: 100=0,104=1024,108=0
+[   55.613775] whnat_hal_wdma_ring_init(): configure ring 1 setting
+[   55.619920] whnat_hal_wdma_ring_init(): wed:b543388e,wdma:da496980: 110=0,114=1024,118=0
+[   55.628101] whnat_hal_wpdma_ring_init(): configure ring 0 setting
+[   55.634355] whnat_hal_wpdma_ring_init(): wed:b543388e wifi:19607ddd: d7300=96848000,d7304=2048,d7308=0
+[   55.643817] whnat_hal_wpdma_ring_init(): configure ring 1 setting
+[   55.649986] whnat_hal_wpdma_ring_init(): wed:b543388e wifi:19607ddd: d7310=96850000,d7314=2048,d7318=0
+[   55.715113] mt7915e 0000:01:00.0: HW/SW Version: 0x8a108a10, Build Time: 20250409180459a
+[   55.715113] 
+[   55.903998] mt7915e 0000:01:00.0: WM Firmware Version: ____000000, Build Time: 20250917151758
+[   55.931006] mt7915e 0000:01:00.0: WA Firmware Version: DEV_000000, Build Time: 20250311151233
+[   56.042319] mt7915_mcu_init_firmware:2440 dev_ver=1 recv_id=0 !!!
+[   56.048961] chip_type_check:101 open error !!!
+[   56.056544] band_calibrated:130 open error !!!
+[   56.061136] bbsoc_load_eeprom_from_bin:247 use default !!!
+[   56.066693] mt7915e 0000:01:00.0: bbsoc_load_eeprom_from_bin() file_path:/lib/firmware/mediatek/mt7915_eeprom_2g.bin
+[   56.077389] mt7915e 0000:01:00.0: load eeprom succesfully from /lib/firmware/mediatek/mt7915_eeprom_2g.bin
+[   56.087196] mt7915e 0000:01:00.0: mt7915_eeprom_load flash_mode
+[   56.093254] mt7915e 0000:01:00.0: val:0x24
+[   56.097418] mt7915e 0000:01:00.0: e2p matched with mt7915a hw
+[   56.111942] npuOffload on mt76 init 
+[   56.115677] the value of pdev->bus->self->devfn is 0 ,and the band_index is 0
+[   56.122965] DriverModel=0
+[   56.125833] Error: 7915A NPU_WIFI_OFFLOAD Set Dirver Model success 
+[   56.132309] Error: 7915A NPU_WIFI_OFFLOAD Set PCIE PORT success 
+[   56.138456] !!!! do phy and virtual address mapping
+[   56.145007] the addr of NCounter2G_Base is e0b7e0e4 
+[   56.150999] dramBaEntry_pa=94e00000
+[   56.154723] after :pci_resource_start= 20000000
+[C0][NPU] npu_set_pcie_base, addr=200d4500, band_idx=0 
+[C0][npu_set_pcie_base] 2.4G pcieBase 200d4500 mem_base 200d4500, hw_rx_desc=0
+[C0][NPU] npu_init...
+[C0]Chip id(4) support NPU Wifi ffload
+[C0][NPU]  pkt_queue_init...
+[C0]counter_init:0
+[C0][NPU] Enter(2.4G) npu_npu_init_rxd, band_idx=0, rx_ring_size=1536
+[   56.188354] WIFI_MAIL_API_GET_WAIT_RXDESC_BASE info=1e806020
+[   56.194410] irq: no irq domain found for interrupt-controller !
+[   56.200457] woe_enable_chk:120 error!!!
+[   56.204497] -->2) Error 2 opening /etc/woe_disable
+[   56.209379] npu_enable_chk:164 error!!!
+[   56.213347] npu npu_controller setting 
+[   56.213347]  default open npu  2 opening /etc/npu_enable
+[   56.222685] pci 0000:00:01.0: enabling device (0140 -> 0142)
+[   56.228526] mt7915e 0000:02:00.0: enabling device (0140 -> 0142)
+[   56.234901] mt7915_mmio_probe:1192 band=1 !!!
+[   56.239416] call HOSTDAPT WIFI HOOK  5G 
+[   56.243515] hostdapt_registe_wifitask 1
+[   56.247465] init 5G tasklet ! 
+[   56.371099] whnat_driver_init:264 call hook sys up & hif init !!!!!
+[   56.377453] whnat_cap_support:83 chip_id=30997 !!!!!
+[   56.382587] whnat_cap_support(): chip_id=7915 is in WHNAT support list
+[   56.389186] whnat_driver_init(): (efault) whnat is enable !!!
+[   56.395096] wifi_slot_get(): bus name=PCI Bus 0000:02, funid=8, get slot id=1
+[   56.402319] whnat_entry_acquire:106 slot_id = 1 !!!!!
+[   56.407511] whnat_entry_acquire(): PCIE SLOT:1, hook to WHNAT,entry id=1
+[   56.415454] wed_ring_init(): wed ring init result = 0
+[   56.438073] create wed ok!!!
+[   56.441121] wdma_init(): wdma(1) base addr=e1234400
+[   56.446089] wdma_init(): wdma(1) irq[0]=86
+[   56.450325] wdma_init(): wdma(1) irq[1]=87
+[   56.454522] wdma_init(): wdma(1) irq[2]=88
+[   56.459166] wifi_chip_probe(): Chang CHIP IRQ: 82 to WHNAT IRQ: 90
+[   56.465454] wifi_slot_get(): bus name=PCI Bus 0000:02, funid=8, get slot id=1
+[   56.472754] wifi_slot_get(): bus name=PCI Bus 0000:02, funid=8, get slot id=1
+[   56.480858] whnat_wed_ring_rx_update():614 index=0 val=93b7e000 !!!
+[   56.487312] whnat_wed_ring_rx_update():614 index=4 val=200 !!!
+[   56.493249] whnat_wed_ring_rx_update():614 index=8 val=1ff !!!
+[   56.500700] wdma_dma_ctrl(): WDMA_GLO_CFG=40000450
+[   56.505598] =========whnat_hal_wdma_init :ECNT WED_WDMA_CFG_BASE = 1fa00000 
+[   56.512801] whnat_hal_wdma_ring_init(): configure ring 0 setting
+[   56.518882] whnat_hal_wdma_ring_init(): wed:59cc59a7,wdma:c523c452: 100=0,104=1024,108=0
+[   56.527120] whnat_hal_wdma_ring_init(): configure ring 1 setting
+[   56.533289] whnat_hal_wdma_ring_init(): wed:59cc59a7,wdma:c523c452: 110=0,114=1024,118=0
+[   56.541475] whnat_hal_wpdma_ring_init(): configure ring 0 setting
+[   56.547706] whnat_hal_wpdma_ring_init(): wed:59cc59a7 wifi:42104311: d7300=991f8000,d7304=2048,d7308=0
+[   56.557165] whnat_hal_wpdma_ring_init(): configure ring 1 setting
+[   56.563355] whnat_hal_wpdma_ring_init(): wed:59cc59a7 wifi:42104311: d7310=952c0000,d7314=2048,d7318=0
+[   56.591613] mt7915e 0000:02:00.0: HW/SW Version: 0x8a108a10, Build Time: 20250409180459a
+[   56.591613] 
+[   56.611220] mt7915e 0000:02:00.0: WM Firmware Version: ____000000, Build Time: 20250917151758
+[   56.638368] mt7915e 0000:02:00.0: WA Firmware Version: DEV_000000, Build Time: 20250311151233
+[   56.749669] mt7915_mcu_init_firmware:2440 dev_ver=1 recv_id=0 !!!
+[   56.756269] chip_type_check:101 open error !!!
+[   56.760794] band_calibrated:130 open error !!!
+[   56.765400] bbsoc_load_eeprom_from_bin:227 use default !!!
+[   56.770971] mt7915e 0000:02:00.0: bbsoc_load_eeprom_from_bin() file_path:/lib/firmware/mediatek/mt7915_eeprom.bin
+[   56.781462] mt7915e 0000:02:00.0: load eeprom succesfully from /lib/firmware/mediatek/mt7915_eeprom.bin
+[   56.790999] mt7915e 0000:02:00.0: mt7915_eeprom_load flash_mode
+[   56.797077] mt7915e 0000:02:00.0: val:0x24
+[   56.801270] mt7915e 0000:02:00.0: e2p matched with mt7915a hw
+[   56.810582] npuOffload on mt76 init 
+[   56.814377] the value of pdev->bus->self->devfn is 8 ,and the band_index is 1
+[   56.821671] DriverModel=0
+[   56.824555] Error: 7915A NPU_WIFI_OFFLOAD Set Dirver Model success 
+[   56.831015] Error: 7915A NPU_WIFI_OFFLOAD Set PCIE PORT success 
+[   56.837267] after :pci_resource_start= 20200000
+[C0][NPU] npu_set_pcie_base, addr=202d4500, band_idx=1 
+[C0][npu_set_pcie_base] 5G pcieBase 202d4500 mem_base 202d4500, hw_rx_desc=0
+[C0][NPU] npu_init...
+[C0]Chip id(4) support NPU Wifi ffload
+[C0][NPU]  pkt_queue_init...
+[C0]counter_init:1
+[C0][NPU] Enter npu_npu_init_rxd_5G, band_idx=1, rx_ring_size=1536
+[   56.870438] WIFI_MAIL_API_GET_WAIT_RXDESC_BASE info=1e800000
+[   56.886782] usbcore: registered new interface driver option
+[   56.892588] usbserial: USB Serial support registered for GSM modem (1-port)
+[   56.902008] usbcore: registered new interface driver qcserial
+[   56.907963] usbserial: USB Serial support registered for Qualcomm USB modem
+[   56.918158] usbcore: registered new interface driver qmi_wwan
+[   56.930498] usbcore: registered new interface driver sierra_net
+[   56.938165] usbcore: registered new interface driver cdc_mbim
+[   56.944984] kmodloader: done loading kernel modules from /etc/modules.d/*
+[   71.470865] ae wan mac driver init 
+[   71.474571] sgmii_api_pon0_force_hsgmii: inint 
+[   71.511358] sgmii_api_pon0_force_hsgmii: exit 
+[   71.641084] ae wan mac driver init OK  
+[   71.938883] xsi mac driver init 
+[   71.942345] sgmii_api_usb0_force_hsgmii: inint 
+[   71.946964] sgmii_api_usb0_force_hsgmii: exit 
+[   71.951595] xsi mac driver init OK  
+[   75.991838] /dev/ubiblock0_4: Can't open blockdev
+[   76.880303] /dev/ubiblock0_4: Can't open blockdev
+[   77.611572] /dev/ubiblock0_4: Can't open blockdev
+reset reason: POR_RESET
+- system upgraded -
+[   84.767037] br-lan: port 1(eth1) entered blocking state
+[   84.772577] br-lan: port 1(eth1) entered disabled state
+[   84.778125] device eth1 entered promiscuous mode
+[   84.802520] br-lan: port 2(eth0.1) entered blocking state
+[   84.808110] br-lan: port 2(eth0.1) entered disabled state
+[   84.813989] device eth0.1 entered promiscuous mode
+[   84.828961] br-lan: port 3(eth0.2) entered blocking state
+[   84.834508] br-lan: port 3(eth0.2) entered disabled state
+[   84.840275] device eth0.2 entered promiscuous mode
+[   84.859233] br-lan: port 4(eth0.3) entered blocking state
+[   84.864866] br-lan: port 4(eth0.3) entered disabled state
+[   84.876961] device eth0.3 entered promiscuous mode
+[   87.553767] genlmsg_multicast() failed = -3
+[   87.559198] br-lan: port 4(eth0.3) entered blocking state
+[   87.564753] br-lan: port 4(eth0.3) entered forwarding state
+[   87.590090] IPv6: ADDRCONF(NETDEV_CHANGE): br-lan: link becomes ready
+[   88.450017] /dev/ubiblock0_4: Can't open blockdev
+[   92.571353] ifc_set_action: cpu:1, nbq:1
+[   92.575368] ifc_set_action: cpu:1, nbq:1
+[   92.579432] ifc_set_action: cpu:1, nbq:2
+[   92.583515] ifc_set_action: cpu:1, nbq:1
+[   92.587522] ifc_set_action: cpu:1, nbq:1
+[   92.591654] ifc_set_action: cpu:1, nbq:1
+[   92.595668] ifc_set_action: cpu:1, nbq:1
+[   92.599681] ifc_set_action: cpu:1, nbq:2
+[   92.603787] ifc_set_action: cpu:1, nbq:2
+[   92.607789] ifc_set_action: cpu:1, nbq:1
+[   92.611816] ifc_set_action: cpu:1, nbq:1
+[   92.615882] ifc_set_action: cpu:1, nbq:1
+[   92.619880] ifc_set_action: cpu:1, nbq:1
+[   92.623919] ifc_set_action: cpu:1, nbq:3
+[   92.627985] ifc_set_action: cpu:1, nbq:1
+[   92.632010] ifc_set_action: cpu:1, nbq:1
+[   92.636010] ifc_set_action: cpu:1, nbq:1
+[   92.640070] ifc_set_action: cpu:1, nbq:1
+[   92.644090] ifc_set_action: cpu:1, nbq:1
+[   92.648109] ifc_set_action: cpu:1, nbq:1
+[   92.652252] ifc_set_action: cpu:1, nbq:7
+[   92.656669] ifc_set_action: cpu:1, nbq:8
+[   96.766825] WARNING! power/level is deprecated; use power/control instead
+[   97.946812] status:
+DSPCore[Ver:TVM1.0.17.0-37],IsHdVoice=0,VOIP_MAX_CHAN=16
+[   98.148896] [1] PCM V2.4 (Oct 24 2021 09:01:35) 
+[   98.198852] bind irq-113 to CPU1
+[   98.202191] PCM_INT=28
+[   98.204710] pcm[Ver:TVM1.0.17.0-37]
+[   98.345371] lec[Ver:TVM1.0.17.0-37]
+[   98.410052] SYS_HCLK=250
+[   98.412728] Major Num:233, device: spi
+[   98.416656] spi[Ver:TVM1.0.17.0-37]
+[   98.426446] [4294947137][spi][INFO][SPI_slic_check:L2654]set slic type: ===0===
+[   98.433951] [4294947138][spi][INFO][SPI_slic_check:L2655]set interface_type: ===1===
+[   98.442077] [4294947139][spi][INFO][SPI_slic_check:L2656]set slicid: ===0===
+[   98.449307] [4294947139][spi][INFO][set_gpio_clocksrc:L2362]set gpio clocksrc,interface:1,devNum:1,gpio:1000
+[   98.459306] [4294947140][spi][INFO][set_gpio_clocksrc:L2373]ZSI
+[   98.465320] [4294947141][spi][INFO][SLIC_Reset_Infc:L2334]======slic reset 7512======
+[   98.473313] [4294947142][spi][INFO][SPI_Reset:L536]
+[   98.473313]  SPI_Reset 2
+[   98.591147] [4294947154][spi][INFO][SPI_slic_check:L2683]======spi check zarlink======
+[   98.599331] [4294947154][spi][INFO][SPI_slic_check:L2698]res_arr[0]:0xff 
+[   98.599331] res_arr[1]:0xff
+[   98.609068] [4294947155][spi][INFO][SPI_slic_check:L2765][zarlink] unknown slic type!reset times:1
+[   98.618208] [4294947156][spi][INFO][SLIC_Reset_Infc:L2334]======slic reset 7512======
+[   98.626254] [4294947157][spi][INFO][SPI_Reset:L536]
+[   98.626254]  SPI_Reset 2
+[   98.751154] [4294947170][spi][INFO][SPI_slic_check:L2683]======spi check zarlink======
+[   98.759272] [4294947170][spi][INFO][SPI_slic_check:L2698]res_arr[0]:0xff 
+[   98.759272] res_arr[1]:0xff
+[   98.769036] [4294947171][spi][INFO][SPI_slic_check:L2765][zarlink] unknown slic type!reset times:2
+[   98.778260] [4294947172][spi][INFO][SLIC_Reset_Infc:L2334]======slic reset 7512======
+[   98.786310] [4294947173][spi][INFO][SPI_Reset:L536]
+[   98.786310]  SPI_Reset 2
+[   98.887882] set meterID=0, rate=0, mode=0, portID=0x2
+[   98.893183] basicParameter = 0x0
+[   98.896481] rate_cfg: value = 0x80000001
+[   98.900471] tokenRate = 0x0
+[   98.903348] rate_cfg: value = 0x90000001
+[   98.907339] bucketSize_shift = 0x1
+[   98.910809] rate_cfg: value = 0xa0000001
+[   98.911086] [4294947186][spi][INFO][SPI_slic_check:L2683]======spi check zarlink======
+[   98.914808] port_id = 2, meter_id = 0
+[   98.922956] [4294947187][spi][INFO][SPI_slic_check:L2698]res_arr[0]:0xff 
+[   98.922956] res_arr[1]:0xff
+[   98.926631] glb_cfg: value = 0xf0000002
+[   98.936275] [4294947188][spi][INFO][SPI_slic_check:L2765][zarlink] unknown slic type!reset times:3
+[   98.949291] [4294947189][spi][INFO][SLIC_Reset_Infc:L2334]======slic reset 7512======
+[   98.957326] [4294947190][spi][INFO][SPI_Reset:L536]
+[   98.957326]  SPI_Reset 2
+[   99.081139] [4294947203][spi][INFO][SPI_slic_check:L2683]======spi check zarlink======
+[   99.089307] [4294947203][spi][INFO][SPI_slic_check:L2698]res_arr[0]:0xff 
+[   99.089307] res_arr[1]:0xff
+[   99.098972] [4294947204][spi][INFO][SPI_slic_check:L2765][zarlink] unknown slic type!reset times:4
+[   99.108109] [4294947205][spi][INFO][SLIC_Reset_Infc:L2334]======slic reset 7512======
+[   99.116116] [4294947206][spi][INFO][SPI_Reset:L536]
+[   99.116116]  SPI_Reset 2
+[   99.251275] [4294947220][spi][INFO][SPI_slic_check:L2683]======spi check zarlink======
+[   99.259400] [4294947220][spi][INFO][SPI_slic_check:L2698]res_arr[0]:0xff 
+[   99.259400] res_arr[1]:0xff
+[   99.272285] [4294947222][spi][INFO][SPI_slic_check:L2765][zarlink] unknown slic type!reset times:5
+[   99.281431] param.data:
+[   99.284184] [4294947223][spi][INFO][SPI_slic_check:L2654]set slic type: ===1===
+[   99.291699] [4294947224][spi][INFO][SPI_slic_check:L2655]set interface_type: ===2===
+[   99.299536] [4294947224][spi][INFO][SPI_slic_check:L2656]set slicid: ===0===
+[   99.306848] [4294947225][spi][INFO][set_gpio_clocksrc:L2362]set gpio clocksrc,interface:2,devNum:1,gpio:1000
+[   99.316913] [4294947226][spi][INFO][set_gpio_clocksrc:L2365]ISI
+[   99.322984] [4294947227][spi][INFO][SLIC_Reset_Infc:L2334]======slic reset 7512======
+[   99.330975] [4294947227][spi][INFO][SPI_Reset:L536]
+[   99.330975]  SPI_Reset 2
+[   99.451157] [4294947240][spi][INFO][SPI_slic_check:L2777]======spi check silicon======
+[   99.459199] [4294947240][spi][INFO][SPI_slic_check:L2790]retVal:0, Part_num 0x0, Revision 0x0
+[   99.467890] [4294947241][spi][ERR][SPI_slic_check:L2886][silicon] unknown slic type!reset times:1
+[   99.476920] [4294947242][spi][INFO][SLIC_Reset_Infc:L2334]======slic reset 7512======
+[   99.484910] [4294947243][spi][INFO][SPI_Reset:L536]
+[   99.484910]  SPI_Reset 2
+[   99.621136] [4294947257][spi][INFO][SPI_slic_check:L2777]======spi check silicon======
+[   99.629220] [4294947257][spi][INFO][SPI_slic_check:L2790]retVal:0, Part_num 0x0, Revision 0x0
+[   99.637911] [4294947258][spi][ERR][SPI_slic_check:L2886][silicon] unknown slic type!reset times:2
+[   99.646928] [4294947259][spi][INFO][SLIC_Reset_Infc:L2334]======slic reset 7512======
+[   99.654829] [4294947260][spi][INFO][SPI_Reset:L536]
+[   99.654829]  SPI_Reset 2
+[   99.781146] [4294947273][spi][INFO][SPI_slic_check:L2777]======spi check silicon======
+[   99.789269] [4294947273][spi][INFO][SPI_slic_check:L2790]retVal:0, Part_num 0x0, Revision 0x0
+[   99.797934] [4294947274][spi][ERR][SPI_slic_check:L2886][silicon] unknown slic type!reset times:3
+[   99.807019] [4294947275][spi][INFO][SLIC_Reset_Infc:L2334]======slic reset 7512======
+[   99.815042] [4294947276][spi][INFO][SPI_Reset:L536]
+[   99.815042]  SPI_Reset 2
+[   99.887907] qos_wrr_info: 0 0 0 0 0
+[   99.891505] QDMA QoS: HW SP
+[   99.943387] [4294947289][spi][INFO][SPI_slic_check:L2777]======spi check silicon======
+[   99.951536] [4294947290][spi][INFO][SPI_slic_check:L2790]retVal:0, Part_num 0x0, Revision 0x0
+[   99.960206] [4294947290][spi][ERR][SPI_slic_check:L2886][silicon] unknown slic type!reset times:4
+[   99.969229] [4294947291][spi][INFO][SLIC_Reset_Infc:L2334]======slic reset 7512======
+[   99.977231] [4294947292][spi][INFO][SPI_Reset:L536]
+[   99.977231]  SPI_Reset 2
+[  100.101091] [4294947305][spi][INFO][SPI_slic_check:L2777]======spi check silicon======
+[  100.109115] [4294947305][spi][INFO][SPI_slic_check:L2790]retVal:0, Part_num 0x0, Revision 0x0
+[  100.117807] [4294947306][spi][ERR][SPI_slic_check:L2886][silicon] unknown slic type!reset times:5
+[  100.127115] param.data:
+[  100.129718] [4294947307][spi][INFO][SPI_slic_check:L2654]set slic type: ===2===
+[  100.137188] [4294947308][spi][INFO][SPI_slic_check:L2655]set interface_type: ===3===
+[  100.145032] [4294947309][spi][INFO][SPI_slic_check:L2656]set slicid: ===0===
+[  100.152232] [4294947310][spi][INFO][set_gpio_clocksrc:L2362]set gpio clocksrc,interface:3,devNum:1,gpio:1000
+[  100.162220] [4294947311][spi][INFO][set_gpio_clocksrc:L2381]CSI
+[  100.168272] [4294947311][spi][INFO][SPI_slic_check:L2895]======spi check lantiq======
+[  100.176203] [4294947312][spi][INFO][SLIC_Reset_Infc:L2334]======slic reset 7512======
+[  100.184188] [4294947313][spi][INFO][SPI_Reset:L536]
+[  100.184188]  SPI_Reset 2
+[  100.311534] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.317033] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.322532] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.328082] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.333600] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.339159] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.347689] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.353279] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.358764] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.364350] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.369841] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.375434] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.380928] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.386492] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.392003] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.397484] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.403039] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.408531] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.414096] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.419581] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.425150] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.430641] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.436212] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.441716] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.447260] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.452750] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.458298] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.463800] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.469286] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.474869] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.480363] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.485929] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.491437] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.496984] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.502481] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.508027] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.513544] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.519108] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.524690] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.530287] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.535830] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.541381] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.547044] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.552634] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.558215] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.563812] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.569399] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.574951] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.580512] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.586068] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.591713] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.597230] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.602883] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.608387] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.613975] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.619554] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.625112] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.630741] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.636302] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.641904] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.647426] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.653035] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.658567] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.664182] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.669692] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.675332] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.680854] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.686414] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.692031] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.697575] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.703205] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.708705] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.714302] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.719807] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.725424] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.730927] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.736571] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.742123] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.747781] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.753342] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.758868] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.764493] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.770004] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.775626] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.781154] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.786732] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.792282] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.797876] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.803474] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.809058] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.814629] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.820163] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.825746] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.831297] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.836881] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.842432] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.848025] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.853614] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.859260] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.864832] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.870420] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  100.875805] [4294947382][spi][INFO][lantiq_slic_verify_device:L2634][lantiq] unknown slic type!reset times:1
+[  100.885918] [4294947383][spi][INFO][SLIC_Reset_Infc:L2334]======slic reset 7512======
+[  100.893950] [4294947384][spi][INFO][SPI_Reset:L536]
+[  100.893950]  SPI_Reset 2
+[  101.021666] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.027242] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.032785] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.038342] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.043852] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.049410] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.054912] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.060459] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.065961] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.071465] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.077007] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.082518] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.088074] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.093578] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.099133] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.104635] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.110190] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.115692] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.121267] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.126756] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.132316] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.137801] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.143307] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.148861] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.154365] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.159921] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.168455] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.174029] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.179521] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.185101] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.190590] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.196154] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.201663] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.207209] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.212756] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.218243] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.223826] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.229321] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.234889] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.240379] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.245949] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.251456] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.256999] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.262512] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.268063] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.273572] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.279122] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.284632] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.290119] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.295686] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.301197] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.306750] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.312249] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.317804] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.323304] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.328854] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.334355] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.339903] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.345409] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.350964] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.356464] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.361970] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.367523] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.373020] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.378577] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.384088] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.389642] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.395148] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.400702] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.406204] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.411771] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.417258] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.425838] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.431357] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.436847] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.442632] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.448136] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.453731] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.459226] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.464794] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.470285] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.475857] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.481364] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.486917] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.492419] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.497967] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.503466] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.508955] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.514539] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.520034] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.525599] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.531100] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.536645] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.542147] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.547699] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.553198] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.558749] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.564251] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.569736] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.575242] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.580726] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.586118] [4294947453][spi][INFO][lantiq_slic_verify_device:L2634][lantiq] unknown slic type!reset times:2
+[  101.596107] [4294947454][spi][INFO][SLIC_Reset_Infc:L2334]======slic reset 7512======
+[  101.604015] [4294947455][spi][INFO][SPI_Reset:L536]
+[  101.604015]  SPI_Reset 2
+[  101.731537] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.737105] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.742628] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.748109] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.753671] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.759151] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.764696] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.770175] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.775724] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.781208] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.786769] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.792276] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.797826] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.803321] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.808872] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.814373] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.819859] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.825425] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.830918] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.836495] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.842007] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.847557] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.853056] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.858610] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.864114] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.869671] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.875178] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.880729] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.886235] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.891743] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.897295] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.902793] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.908341] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.913842] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.919392] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.924926] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.930478] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.936168] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.941782] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.947269] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.952830] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.958322] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.963825] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.969392] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.974903] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.980449] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.985953] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.991527] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  101.997019] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.002582] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.008069] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.013657] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.019149] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.024721] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.030210] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.035730] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.041301] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.046789] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.052344] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.057836] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.063404] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.068894] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.074461] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.079954] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.085520] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.091013] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.096581] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.102092] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.107580] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.113133] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.118617] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.124184] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.129674] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.135243] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.140734] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.146303] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.151810] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.157357] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.162854] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.168403] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.173901] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.179389] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.184955] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.190447] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.196014] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.201519] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.207069] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.212569] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.218124] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.223624] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.229177] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.234673] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.240224] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.245723] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.251226] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.256781] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.262296] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.267850] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.273362] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.278911] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.284404] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.289777] [4294947523][spi][INFO][lantiq_slic_verify_device:L2634][lantiq] unknown slic type!reset times:3
+[  102.299759] [4294947524][spi][INFO][SLIC_Reset_Infc:L2334]======slic reset 7512======
+[  102.307693] [4294947525][spi][INFO][SPI_Reset:L536]
+[  102.307693]  SPI_Reset 2
+[  102.431533] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.437035] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.442616] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.448107] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.453679] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.459172] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.464743] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.470232] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.475799] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.481598] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.487091] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.492662] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.498149] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.503716] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.509224] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.514801] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.520294] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.525859] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.531369] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.536915] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.542412] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.547959] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.553462] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.558947] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.564512] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.570005] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.575572] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.581071] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.586626] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.592132] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.597683] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.603182] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.608732] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.614236] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.619789] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.625292] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.630780] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.636344] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.641853] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.647401] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.652896] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.658443] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.663948] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.669496] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.674996] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.680546] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.686046] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.691612] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.697095] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.702584] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.708132] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.713639] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.719191] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.724696] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.730250] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.735752] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.741320] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.746809] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.752361] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.757853] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.763417] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.768904] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.774413] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.779964] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.785463] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.791013] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.796515] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.802082] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.807572] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.813130] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.818616] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.824231] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.829734] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.835328] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.840824] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.846373] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.851999] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.857508] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.863126] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.868638] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.874300] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.879809] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.885461] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.890964] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.896586] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.902135] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.907706] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.913295] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.918805] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.924473] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.929975] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.935622] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.941158] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.946758] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.952316] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.957907] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.963465] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.969028] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.974600] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.980172] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.985722] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  102.991051] [4294947593][spi][INFO][lantiq_slic_verify_device:L2634][lantiq] unknown slic type!reset times:4
+[  103.001059] [4294947594][spi][INFO][SLIC_Reset_Infc:L2334]======slic reset 7512======
+[  103.009083] [4294947595][spi][INFO][SPI_Reset:L536]
+[  103.009083]  SPI_Reset 2
+[  103.131614] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.137150] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.143018] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.148545] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.154109] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.159672] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.165185] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.170737] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.176238] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.181804] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.187285] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.192836] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.198323] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.203889] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.209382] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.214946] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.220430] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.225940] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.231508] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.236989] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.242545] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.248034] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.253601] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.259086] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.264660] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.270144] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.275711] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.281210] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.286761] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.292262] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.297751] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.303316] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.308808] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.314373] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.319858] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.325427] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.330918] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.336483] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.341994] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.347540] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.353036] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.358584] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.364095] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.369594] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.375218] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.380730] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.386345] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.391861] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.397485] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.403028] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.408596] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.414109] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.419660] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.425167] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.430720] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.436221] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.441724] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.447271] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.452767] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.458313] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.463815] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.469366] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.474866] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.480415] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.485916] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.491482] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.496963] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.502517] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.508001] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.513505] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.519063] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.524568] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.530122] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.535626] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.541196] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.546690] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.552255] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.557740] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.563309] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.568801] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.574365] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.579858] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.585360] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.590912] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.596411] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.601979] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.607467] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.613018] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.618504] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.624073] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.629565] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.635129] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.640614] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.646179] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.651688] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.657171] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.662724] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.668209] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.673775] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.679268] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.684834] Read 18 DATA:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:
+[  103.690149] [4294947663][spi][INFO][lantiq_slic_verify_device:L2634][lantiq] unknown slic type!reset times:5
+[  103.700130] param.data:
+[  103.709117] [spi_ctrl] exit
+[  103.800856] PCM1 and SLIC Controller Module has been unloaded
+[  111.216591] uledd: v1.0.1 started.
+Enforcing UCI values, no boot marker found.
+All init.d scripts started.
+Please press Enter to activate this console.
