@@ -21,7 +21,7 @@ power consumption in the market.
   - Support Active Ethernet
   - GPON support 32-TCONTs, 256 GEM port, with flexible GEM port to T-CONTS mapping mechanism, and status report/traffic monitor DBA mode
   - GPON support AES-128 decryption and encryption
-  - EPON support 8 LLIDs, triple-churning decryption algorithm defined by СТС
+  - EPON support 8 LLIDs, triple-churning decryption algorithm defined by CTC
   - Support PON rouge ONU detection, dying-gasp, Type-C optical protection switching
   - Providing MIB counters and sniffer function for quickly field debug purpose
 
