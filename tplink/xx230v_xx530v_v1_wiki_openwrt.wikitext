@@ -14,9 +14,9 @@ It's important to replace the stock U-Boot with new mainstream U-Boot built with
 
 ===== Experimental firmware =====
 
-**Downstream openwrt: https://sirherobrine23.com.br/airoha_an7523/openwrt.git**
+**Downstream openwrt: https://sirherobrine23.com.br/airoha_en7523/openwrt.git**
 
-**Builds found here: https://sirherobrine23.com.br/airoha_an7523/builds/releases**
+**Builds found here: https://sirherobrine23.com.br/airoha_en7523/builds/releases**
 
 ===== Note =====
 
@@ -35,7 +35,7 @@ It's important to replace the stock U-Boot with new mainstream U-Boot built with
 
 1. Recommend that you make backup/DUMP from NAND in case you have any problems on replacing U-Boot.
 
-2. Get or builds openwrt you needs **openwrt-airoha-an7523-tplink_xx230v_v1-uboot-bootloader.bin** for replace u-boot
+2. Get or builds openwrt you needs **openwrt-airoha-en7523-tplink_xx230v_v1-uboot-bootloader.bin** for replace u-boot
 
 3. Connect your USB serial adapter to your computer and the serial pins to the UART headers TX, RX, GND on the board.
 
@@ -43,7 +43,7 @@ It's important to replace the stock U-Boot with new mainstream U-Boot built with
 
 5. Tun on device and wait to countdown show to hint **ctrl-c**
 
-6. in **bin/targets/airoha/an7523/**, run "**tftp -v -m binary 192.168.1.1 -c put openwrt-airoha-an7523-tplink_xx230v_v1-uboot-bootloader.bin**"
+6. in **bin/targets/airoha/en7523/**, run "**tftp -v -m binary 192.168.1.1 -c put openwrt-airoha-en7523-tplink_xx230v_v1-uboot-bootloader.bin**"
 
 7. write U-Boot to nand with "**flash write 0x0 0x$filesize $loadaddr**"
 
@@ -61,7 +61,7 @@ It's important to replace the stock U-Boot with new mainstream U-Boot built with
 
 5. return to bootmenu and run **Boot system via TFTP**
 
-6. Update firmware same to another device with luci or sysupgrade command with "**openwrt-airoha-an7523-tplink_xx230v_v1-squashfs-sysupgrade.bin**" file
+6. Update firmware same to another device with luci or sysupgrade command with "**openwrt-airoha-en7523-tplink_xx230v_v1-squashfs-sysupgrade.bin**" file
 
 ===== Network interfaces =====
 The default network configuration is:
@@ -145,6 +145,12 @@ The TP-Link xx230v has the following buttons:
 ^ <color magenta>mountpoint</color> | //none//       | //none//        | //none//                     | //none//                 | ** / **                               | //none//                  | ** / **                               | //none//                      |
 </WRAP>
 
+===== Notes =====
+
+1. ISP variants of the xx230v v1 and xx530v v1 are compatible with the retail version, only some regs of art may change or are not present, but the mt76 eeprom and MAC address remain the same in the regs of art as far as we know.
+
+2. There is a model of the xx530v v1 for a Brazilian ISP (Algar) that contains slightly different hardware, with 512Mb of RAM instead of the 256Mb present in the version sold in Brazilian retail, and some ART regs that are not present, but not relevant for OpenWRT.
+
 ===== Bootlogs =====
 
 ==== OpenWrt bootlog ====
@@ -152,31 +158,51 @@ The TP-Link xx230v has the following buttons:
 <nowiki>
 Secure key does not exist
 
+
 EN7523DRAMC V0.5
+
 dram_type = 5, speed = 1866
+
 Final Impdance Cal Result: OCDP:0x1b, OCDN:0x1b, ODTP:0x6, ODTN:0x6
+
 DDR1866 PLL setting init
-[Dramc] PCDDR3 AC Timing update
+
+[Dramc] PCDDR3 AC Timing update 
+
 Fire MRW command...
+
 ModeReg.2, value.0x20 done
+
 Fire MRW command...
+
 ModeReg.3, value.0x0 done
+
 Fire MRW command...
+
 ModeReg.1, value.0x6 done
+
 Fire MRW command...
+
 ModeReg.0, value.0x1114 done
+
 Fire MRW command...
+
 ModeReg.1, value.0x86 done
+
 Fire MRW command...
+
 ModeReg.1, value.0x6 done
+
 Calculate size.
+
 DRAM size=256MB
 
 
-U-Boot 2026.01-OpenWrt-r34136-e8ee42f9a5 (Apr 24 2026 - 22:04:23 +0000)
+
+U-Boot 2026.01-OpenWrt-r34771-7658a9ea318 (Jun 05 2026 - 00:58:41 +0000)
 
 CPU:   Airoha EN7523/EN7529/EN7562
-Model: TP-Link xx230v/xx530v v1
+Model: TP-Link xx230v v1
 DRAM:  512 MiB
 Core:  24 devices, 16 uclasses, devicetree: separate
 Loading Environment from UBI... spi-nand: spi_nand nand@0: ESMT SPI NAND was found.
@@ -188,85 +214,77 @@ Read 16384 bytes from volume ubootenv2 to 9fb296c0
 In:    serial
 Out:   serial
 Err:   serial
-Net:
-Warning: ethernet@1fb50000 (eth0) using random MAC address - fa:34:24:5f:ca:5c
+Net:   
+Warning: ethernet@1fb50000 (eth0) using random MAC address - 96:f8:0e:e8:7a:70
 eth0: ethernet@1fb50000
-Hit any key to stop autoboot:  0
-U-Boot> tftpboot openwrt-airoha-an7523-tplink_xx230v_v1-initramfs-kernel.bin && bootm
+Hit any key to stop autoboot:  3  0
+U-Boot> tftpboot openwrt-airoha-en7523-tplink_xx230v-v1-initramfs-kernel.bin && bootm
 Using ethernet@1fb50000 device
 TFTP from server 192.168.1.10; our IP address is 192.168.1.1
-Filename 'openwrt-airoha-an7523-tplink_xx230v_v1-initramfs-kernel.bin'.
+Filename 'openwrt-airoha-en7523-tplink_xx230v-v1-initramfs-kernel.bin'.
 Load address: 0x86a00000
-Loading: #################################################################
-         #################################################################
-         #################################################################
-         #################################################################
-         #################################################################
-         #################################################################
-         #################################################################
-         #################################################################
-         #################################################################
-         #################################################################
-         #################################################################
-         #################################################################
-         #################################################################
-         #################################################################
-         #################################################################
-         #################################################################
-         #################################################################
-         #################################################################
-         #################################################################
-         #################################################################
-         #################################################################
-         #################################################################
-         #################################################################
-         #################################################################
-         #################################################################
-         ####################################
-         3.2 MiB/s
+Loading: *#################################################################
+	 #################################################################
+	 #################################################################
+	 #################################################################
+	 #################################################################
+	 #################################################################
+	 #################################################################
+	 #################################################################
+	 #################################################################
+	 #################################################################
+	 #################################################################
+	 #################################################################
+	 #################################################################
+	 #################################################################
+	 #################################################################
+	 #################################################################
+	 #################################################################
+	 ############
+	 2.5 MiB/s
 done
-Bytes transferred = 24379392 (1740000 hex)
+Bytes transferred = 16384000 (fa0000 hex)
 ## Loading kernel (any) from FIT Image at 86a00000 ...
    Using 'config-1' configuration
    Trying 'kernel-1' kernel subimage
-     Description:  ARM OpenWrt Linux-6.12.85
+     Description:  ARM OpenWrt Linux-6.18.34
      Type:         Kernel Image
      Compression:  lzma compressed
      Data Start:   0x86a000e4
-     Data Size:    24331375 Bytes = 23.2 MiB
+     Data Size:    16286032 Bytes = 15.5 MiB
      Architecture: ARM
      OS:           Linux
      Load Address: 0x80208000
      Entry Point:  0x80208000
      Hash algo:    crc32
-     Hash value:   1e0b2f53
+     Hash value:   5d648698
      Hash algo:    sha1
-     Hash value:   384bd53ff0143250d4ca848efc1ad2ef76fc30fc
+     Hash value:   c34003119a3ef6b829eabe7ad9222d0ef409363d
    Verifying Hash Integrity ... crc32+ sha1+ OK
 ## Loading fdt (any) from FIT Image at 86a00000 ...
    Using 'config-1' configuration
    Trying 'fdt-1' fdt subimage
-     Description:  ARM OpenWrt tplink_xx230v_v1 device tree blob
+     Description:  ARM OpenWrt tplink_xx230v-v1 device tree blob
      Type:         Flat Device Tree
      Compression:  uncompressed
-     Data Start:   0x88134690
-     Data Size:    14174 Bytes = 13.8 KiB
+     Data Start:   0x87988370
+     Data Size:    17087 Bytes = 16.7 KiB
      Architecture: ARM
      Hash algo:    crc32
-     Hash value:   f1421a08
+     Hash value:   1b78aefe
      Hash algo:    sha1
-     Hash value:   7fa949b23fdfcc5aaa7eb3f5c0e4104d715e7ddb
+     Hash value:   b804e31cc274e64d20f61a444a805d31ff313792
    Verifying Hash Integrity ... crc32+ sha1+ OK
-   Booting using the fdt blob at 0x88134690
-Working FDT set to 88134690
+   Booting using the fdt blob at 0x87988370
+Working FDT set to 87988370
    Uncompressing Kernel Image to 80208000
-   Loading Device Tree to 9eb1e000, end 9eb2475d ... OK
-Working FDT set to 9eb1e000
+   Loading Device Tree to 9eb1d000, end 9eb242be ... OK
+Working FDT set to 9eb1d000
 
 Starting kernel ...
 
 [    0.000000] Booting Linux on physical CPU 0x0
-[    0.000000] Linux version 6.12.85 (sirherobrine23@matheus-note) (arm-openwrt-linux-muslgnueabi-gcc (OpenWrt GCC 14.3.0 r33479-5f7ec5c8b9) 14.3.0, GNU ld (GNU Binutils) 2.44) #0 SMP Wed May  6 19:49:24 2026
+[    0.000000] Linux version 6.18.34 (sirherobrine23@matheus-note) (arm-openwrt-linux-muslgnueabi-gcc (OpenWrt GCC 14.3.0 r34771-7658a9ea318) 14.3.0, GNU ld (GNU Binutils) 2.44) #0 SMP Mon Jun  8 00:11:54 2026
 [    0.000000] CPU: ARMv7 Processor [410fd034] revision 4 (ARMv7), cr=10c5383d
 [    0.000000] CPU: div instructions available: patching division code
 [    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
@@ -296,249 +314,299 @@ Starting kernel ...
 [    0.000000] psci: Using standard PSCI v0.2 function IDs
 [    0.000000] psci: MIGRATE_INFO_TYPE not supported.
 [    0.000000] psci: SMC Calling Convention v1.1
-[    0.000000] percpu: Embedded 14 pages/cpu s25228 r8192 d23924 u57344
-[    0.000000] Kernel command line: console=ttyS0,115200 earlycon ubi.block=0,fit root=/dev/ubiblock0_3 rootwait
+[    0.000000] percpu: Embedded 14 pages/cpu s25356 r8192 d23796 u57344
+[    0.000000] Kernel command line: console=ttyS0,115200 earlycon ubi.block=0,fit root=/dev/fit0 rootwait
+[    0.000000] printk: log buffer data + meta data: 131072 + 409600 = 540672 bytes
 [    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
 [    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes, linear)
 [    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 130560
 [    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
 [    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
 [    0.000000] rcu: Hierarchical RCU implementation.
-[    0.000000]  Tracing variant of Tasks RCU enabled.
+[    0.000000] 	Tracing variant of Tasks RCU enabled.
 [    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
 [    0.000000] RCU Tasks Trace: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=2.
 [    0.000000] NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
 [    0.000000] GICv3: 256 SPIs implemented
 [    0.000000] GICv3: 0 Extended SPIs implemented
 [    0.000000] GICv3: GICv3 features: 16 PPIs
-[    0.000000] GICv3: GICD_CTRL.DS=0, SCR_EL3.FIQ=0
+[    0.000000] GICv3: GICD_CTLR.DS=0, SCR_EL3.FIQ=0
 [    0.000000] GICv3: CPU0: found redistributor 0 region 0:0x09080000
 [    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
-[    0.000000] arch_timer: cp15 timer(s) running at 25.00MHz (virt).
+[    0.000000] arch_timer: cp15 timer running at 25.00MHz (virt).
 [    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x5c40939b5, max_idle_ns: 440795202646 ns
 [    0.000001] sched_clock: 56 bits at 25MHz, resolution 40ns, wraps every 4398046511100ns
 [    0.008800] Switching to timer-based delay loop, resolution 40ns
-[    0.015556] Calibrating delay loop (skipped), value calculated using timer frequency.. 50.00 BogoMIPS (lpj=250000)
-[    0.026940] CPU: Testing write buffer coherency: ok
-[    0.032332] pid_max: default: 32768 minimum: 301
-[    0.044108] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
-[    0.052156] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
-[    0.063694] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
-[    0.070938] Setting up static identity map for 0x80300000 - 0x80300060
-[    0.078289] rcu: Hierarchical SRCU implementation.
-[    0.083556] rcu:     Max phase no-delay instances is 1000.
-[    0.089576] Timer migration: 1 hierarchy levels; 8 children per group; 1 crossnode level
-[    0.098779] smp: Bringing up secondary CPUs ...
-[    0.104454] GICv3: CPU1: found redistributor 1 region 0:0x090a0000
-[    0.104509] CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
-[    0.104658] smp: Brought up 1 node, 2 CPUs
-[    0.122185] SMP: Total of 2 processors activated (100.00 BogoMIPS).
-[    0.129085] CPU: All CPU(s) started in SVC mode.
-[    0.134647] Memory: 452596K/522240K available (7756K kernel code, 622K rwdata, 2020K rodata, 20480K init, 217K bss, 68512K reserved, 0K cma-reserved)
-[    0.153787] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
-[    0.164655] futex hash table entries: 512 (order: 3, 32768 bytes, linear)
-[    0.175553] pinctrl core: initialized pinctrl subsystem
-[    0.183383] NET: Registered PF_NETLINK/PF_ROUTE protocol family
-[    0.190196] DMA: preallocated 256 KiB pool for atomic coherent allocations
-[    0.198559] thermal_sys: Registered thermal governor 'step_wise'
-[    0.198649] cpuidle: using governor menu
-[    0.212251] /pcie@1fa91000: Fixed dependency cycle(s) with /pcie@1fa91000/interrupt-controller
-[    0.222193] /pcie@1fa92000: Fixed dependency cycle(s) with /pcie@1fa92000/interrupt-controller
-[    0.240948] SCSI subsystem initialized
-[    0.245330] usbcore: registered new interface driver usbfs
-[    0.251390] usbcore: registered new interface driver hub
-[    0.257297] usbcore: registered new device driver usb
-[    0.264304] clocksource: Switched to clocksource arch_sys_counter
-[    0.277171] NET: Registered PF_INET protocol family
-[    0.282700] IP idents hash table entries: 8192 (order: 4, 65536 bytes, linear)
-[    0.291655] tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 4096 bytes, linear)
-[    0.300912] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
-[    0.309445] TCP established hash table entries: 4096 (order: 2, 16384 bytes, linear)
-[    0.318003] TCP bind hash table entries: 4096 (order: 4, 65536 bytes, linear)
-[    0.325948] TCP: Hash tables configured (established 4096 bind 4096)
-[    0.333220] MPTCP token hash table entries: 512 (order: 1, 8192 bytes, linear)
-[    0.341431] UDP hash table entries: 256 (order: 1, 8192 bytes, linear)
-[    0.348657] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes, linear)
-[    0.356757] NET: Registered PF_UNIX/PF_LOCAL protocol family
-[    0.363012] PCI: CLS 0 bytes, default 64
-[    0.368758] workingset: timestamp_bits=14 max_order=17 bucket_order=3
-[    0.377542] squashfs: version 4.0 (2009/01/31) Phillip Lougher
-[    0.383966] jffs2: version 2.2 (NAND) (SUMMARY) (LZMA) (RTIME) (CMODE_PRIORITY) (c) 2001-2006 Red Hat, Inc.
-[    0.677321] mtk-pcie 1fa91000.pcie: host bridge /pcie@1fa91000 ranges:
-[    0.684597] mtk-pcie 1fa91000.pcie:      MEM 0x0020000000..0x0021ffffff -> 0x0020000000
-[    1.284398] mtk-pcie 1fa91000.pcie: Port0 link down
-[    1.290099] mtk-pcie 1fa91000.pcie: PCI host bridge to bus 0000:00
-[    1.296972] pci_bus 0000:00: root bus resource [bus 00-ff]
-[    1.303010] pci_bus 0000:00: root bus resource [mem 0x20000000-0x21ffffff]
-[    1.311533] PCI: bus0: Fast back to back transfers enabled
-[    1.317603] pci_bus 0000:00: resource 4 [mem 0x20000000-0x21ffffff]
-[    1.324859] mtk-pcie 1fa92000.pcie: host bridge /pcie@1fa92000 ranges:
-[    1.332061] mtk-pcie 1fa92000.pcie:      MEM 0x0022000000..0x0023ffffff -> 0x0022000000
-[    1.862830] mtk-pcie 1fa92000.pcie: PCI host bridge to bus 0001:00
-[    1.869676] pci_bus 0001:00: root bus resource [bus 00-ff]
-[    1.875724] pci_bus 0001:00: root bus resource [mem 0x22000000-0x23ffffff]
-[    1.883587] pci 0001:00:01.0: [14c3:0811] type 01 class 0x060400 PCIe Root Port
-[    1.891839] pci 0001:00:01.0: BAR 0: can't handle BAR larger than 4GB (size 0x200000000)
-[    1.900753] pci 0001:00:01.0: BAR 0 [mem size 0x00000001 64bit pref disabled]
-[    1.908685] pci 0001:00:01.0: PCI bridge to [bus 00]
-[    1.914216] pci 0001:00:01.0:   bridge window [mem 0x00000000-0x000fffff]
-[    1.923904] PCI: bus0: Fast back to back transfers disabled
-[    1.930088] pci 0001:00:01.0: bridge configuration invalid ([bus 00-00]), reconfiguring
-[    1.939615] pci 0001:01:00.0: [14c3:7915] type 00 class 0x000280 PCIe Endpoint
-[    1.947793] pci 0001:01:00.0: BAR 0 [mem 0x00000000-0x000fffff 64bit pref]
-[    1.955477] pci 0001:01:00.0: BAR 2 [mem 0x00000000-0x00003fff 64bit pref]
-[    1.963136] pci 0001:01:00.0: BAR 4 [mem 0x00000000-0x00000fff 64bit pref]
-[    1.971448] pci 0001:01:00.0: supports D1 D2
-[    1.976158] pci 0001:01:00.0: PME# supported from D0 D1 D2 D3hot D3cold
-[    1.983773] pci 0001:01:00.0: 2.000 Gb/s available PCIe bandwidth, limited by 2.5 GT/s PCIe x1 link at 0001:00:01.0 (capable of 4.000 Gb/s with 5.0 GT/s PCIe x1 link)
-[    2.000825] PCI: bus1: Fast back to back transfers disabled
-[    2.007008] pci_bus 0001:01: busn_res: [bus 01-ff] end is updated to 01
-[    2.014361] pci 0001:00:01.0: bridge window [mem 0x22000000-0x221fffff]: assigned
-[    2.022587] pci 0001:00:01.0: BAR 0 [mem 0x22200000 64bit pref disabled]: assigned
-[    2.030985] pci 0001:00:01.0: BAR 0: error updating (0x2220000c != 0x0000000c)
-[    2.039033] pci 0001:01:00.0: BAR 0 [mem 0x22000000-0x220fffff 64bit pref]: assigned
-[    2.047660] pci 0001:01:00.0: BAR 2 [mem 0x22100000-0x22103fff 64bit pref]: assigned
-[    2.056284] pci 0001:01:00.0: BAR 4 [mem 0x22104000-0x22104fff 64bit pref]: assigned
-[    2.064907] pci 0001:00:01.0: PCI bridge to [bus 01]
-[    2.070397] pci 0001:00:01.0:   bridge window [mem 0x22000000-0x221fffff]
-[    2.077941] pci_bus 0001:00: resource 4 [mem 0x22000000-0x23ffffff]
-[    2.084845] pci_bus 0001:01: resource 1 [mem 0x22000000-0x221fffff]
-[    2.092421] pcieport 0001:00:01.0: enabling device (0140 -> 0142)
-[    2.099969] pcieport 0001:00:01.0: PME: Signaling with IRQ 31
-[    2.108258] Serial: 8250/16550 driver, 2 ports, IRQ sharing disabled
-[    2.116261] printk: legacy console [ttyS0] disabled
-[    2.122057] 1fbf0000.serial: ttyS0 at MMIO 0x1fbf0000 (irq = 32, base_baud = 115200) is a 16550
-[    2.131705] printk: legacy console [ttyS0] enabled
-[    2.131705] printk: legacy console [ttyS0] enabled
-[    2.141779] printk: legacy bootconsole [ns16550] disabled
-[    2.141779] printk: legacy bootconsole [ns16550] disabled
-[    2.157781] airoha-spi 1fa10000.spi: boot type: NAND
-[    2.163334] spi-nand spi0.0: ESMT SPI NAND was found.
-[    2.168439] spi-nand spi0.0: 128 MiB, block size: 128 KiB, page size: 2048, OOB size: 64
-[    2.177313] random: crng init done
-[   18.724759] 2 fixed-partitions partitions found on MTD device spi0.0
-[   18.731377] Creating 2 MTD partitions on "spi0.0":
-[   18.736237] 0x000000000000-0x000000100000 : "u-boot"
-[   18.743906] 0x000000100000-0x000008000000 : "ubi"
-[   19.023225] ubi0: attaching mtd1
-[   19.684325] ubi0: scanning is finished
-[   19.697512] ubi0: attached mtd1 (name "ubi", size 127 MiB)
-[   19.703027] ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
-[   19.709947] ubi0: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
-[   19.716756] ubi0: VID header offset: 2048 (aligned 2048), data offset: 4096
-[   19.723720] ubi0: good PEBs: 1016, bad PEBs: 0, corrupted PEBs: 0
-[   19.729823] ubi0: user volume: 4, internal volumes: 1, max. volumes count: 128
-[   19.737056] ubi0: max/mean erase counter: 2/1, WL threshold: 4096, image sequence number: 0
-[   19.745439] ubi0: available PEBs: 0, total reserved PEBs: 1016, PEBs reserved for bad PEB handling: 20
-[   19.754784] ubi0: background thread "ubi_bgt0d" started, PID 146
-[   19.756228] block ubiblock0_3: created from ubi0:3(fit)
-[   19.766965] spi_master spi0: cannot find modalias for /spi@1fa10000/flash@1
-[   19.773944] spi_master spi0: Failed to create SPI device for /spi@1fa10000/flash@1
-[   19.856147] airoha-npu 1e900000.npu: L2C sram: 0x00, FPGA Stage: 0
-[   20.814293] airoha-npu 1e900000.npu: wlan get msg: id 10, core 0, body size 4
-[   20.821459] airoha-npu 1e900000.npu: NPU not support get version
-[   20.827797] xhci-mtk 1fab0000.usb: supply vbus not found, using dummy regulator
-[   20.835335] xhci-mtk 1fab0000.usb: supply vusb33 not found, using dummy regulator
-[   20.856813] airoha-usb-phy 1fad0000.phy: Frequency not detected, using default SR calibration.
-[   20.870017] xhci-mtk 1fab0000.usb: xHCI Host Controller
-[   20.875316] xhci-mtk 1fab0000.usb: new USB bus registered, assigned bus number 1
-[   20.886679] xhci-mtk 1fab0000.usb: hcc params 0x01400f98 hci version 0x110 quirks 0x0000000000200010
-[   20.895912] xhci-mtk 1fab0000.usb: irq 46, io mem 0x1fab0000
-[   20.901721] xhci-mtk 1fab0000.usb: xHCI Host Controller
-[   20.907002] xhci-mtk 1fab0000.usb: new USB bus registered, assigned bus number 2
-[   20.914422] xhci-mtk 1fab0000.usb: Host supports USB 3.2 Enhanced SuperSpeed
-[   20.922198] hub 1-0:1.0: USB hub found
-[   20.926064] hub 1-0:1.0: 2 ports detected
-[   20.930797] usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
-[   20.939618] hub 2-0:1.0: USB hub found
-[   20.943518] hub 2-0:1.0: 1 port detected
-[   20.948325] i2c-mt7621 1fbf8000.i2c0: clock 100 kHz
-[   20.966039] mtk-eip93 1fb70000.crypto: EIP93:3:0:1,PE(0xfe007:0x41710041)
-[   20.973300] NET: Registered PF_INET6 protocol family
-[   20.979550] Segment Routing with IPv6
-[   20.983263] In-situ OAM (IOAM) with IPv6
-[   20.987334] NET: Registered PF_PACKET protocol family
-[   20.992597] 8021q: 802.1Q VLAN Support v1.8
-[   20.996953] Registering SWP/SWPB emulation handler
-[   21.097989] mt7530-mmio 1fb58000.switch: configuring for fixed/internal link mode
-[   21.105877] mt7530-mmio 1fb58000.switch: Link is Up - 10Gbps/Full - flow control rx/tx
-[   21.130835] mt7530-mmio 1fb58000.switch lan1 (uninitialized): PHY [mt7530-0:09] driver [Airoha AN7523 PHY] (irq=POLL)
-[   21.142392] mt7530-mmio 1fb58000.switch lan2 (uninitialized): PHY [mt7530-0:0a] driver [Airoha AN7523 PHY] (irq=POLL)
-[   21.153863] mt7530-mmio 1fb58000.switch lan3 (uninitialized): PHY [mt7530-0:0b] driver [Airoha AN7523 PHY] (irq=POLL)
-[   21.165345] mt7530-mmio 1fb58000.switch wan (uninitialized): PHY [mt7530-0:0c] driver [Airoha AN7523 PHY] (irq=POLL)
-[   21.176743] airoha_eth 1fb50000.ethernet eth0: entered promiscuous mode
-[   21.183422] DSA: tree 0 setup
-[   21.187259] clk: Disabling unused clocks
-[   21.191204] PM: genpd: Disabling unused power domains
-[   21.217145] Freeing unused kernel image (initmem) memory: 20480K
-[   21.223466] Run /init as init process
-[   21.902438] init: Console is alive
-[   21.906138] init: - watchdog -
-[   21.923053] kmodloader: loading kernel modules from /etc/modules-boot.d/*
-[   21.939120] gpio_button_hotplug: loading out-of-tree module taints kernel.
-[   21.964201] usbcore: registered new interface driver usb-storage
-[   21.979210] kmodloader: done loading kernel modules from /etc/modules-boot.d/*
-[   21.990765] init: - preinit -
+[    0.015598] Calibrating delay loop (skipped), value calculated using timer frequency.. 50.00 BogoMIPS (lpj=250000)
+[    0.026985] CPU: Testing write buffer coherency: ok
+[    0.032376] pid_max: default: 32768 minimum: 301
+[    0.042745] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.050792] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.069171] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.076483] Setting up static identity map for 0x80300000 - 0x80300060
+[    0.083823] rcu: Hierarchical SRCU implementation.
+[    0.089116] rcu: 	Max phase no-delay instances is 1000.
+[    0.095124] Timer migration: 1 hierarchy levels; 8 children per group; 1 crossnode level
+[    0.104373] smp: Bringing up secondary CPUs ...
+[    0.109960] GICv3: CPU1: found redistributor 1 region 0:0x090a0000
+[    0.110015] CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+[    0.110254] smp: Brought up 1 node, 2 CPUs
+[    0.127790] SMP: Total of 2 processors activated (100.00 BogoMIPS).
+[    0.134675] CPU: All CPU(s) started in SVC mode.
+[    0.140331] Memory: 459492K/522240K available (8544K kernel code, 628K rwdata, 2204K rodata, 12288K init, 216K bss, 61368K reserved, 0K cma-reserved)
+[    0.160068] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.170942] posixtimers hash table entries: 1024 (order: 1, 8192 bytes, linear)
+[    0.179001] futex hash table entries: 512 (32768 bytes on 1 NUMA nodes, total 32 KiB, linear).
+[    0.192000] pinctrl core: initialized pinctrl subsystem
+[    0.200011] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.206780] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    0.215187] thermal_sys: Registered thermal governor 'step_wise'
+[    0.215272] cpuidle: using governor menu
+[    0.229296] /pcie@1fa91000: Fixed dependency cycle(s) with /pcie@1fa91000/interrupt-controller
+[    0.239268] /pcie@1fa92000: Fixed dependency cycle(s) with /pcie@1fa92000/interrupt-controller
+[    0.258041] SCSI subsystem initialized
+[    0.262452] usbcore: registered new interface driver usbfs
+[    0.268516] usbcore: registered new interface driver hub
+[    0.274420] usbcore: registered new device driver usb
+[    0.281405] clocksource: Switched to clocksource arch_sys_counter
+[    0.294125] NET: Registered PF_INET protocol family
+[    0.299651] IP idents hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.308569] tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 4096 bytes, linear)
+[    0.317822] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.326354] TCP established hash table entries: 4096 (order: 2, 16384 bytes, linear)
+[    0.334922] TCP bind hash table entries: 4096 (order: 4, 65536 bytes, linear)
+[    0.342876] TCP: Hash tables configured (established 4096 bind 4096)
+[    0.350159] MPTCP token hash table entries: 512 (order: 1, 8192 bytes, linear)
+[    0.358380] UDP hash table entries: 256 (order: 2, 14336 bytes, linear)
+[    0.365701] UDP-Lite hash table entries: 256 (order: 2, 14336 bytes, linear)
+[    0.373925] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.380183] PCI: CLS 0 bytes, default 64
+[    0.385809] workingset: timestamp_bits=14 max_order=17 bucket_order=3
+[    0.402312] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.408741] jffs2: version 2.2 (NAND) (SUMMARY) (LZMA) (RTIME) (CMODE_PRIORITY) (c) 2001-2006 Red Hat, Inc.
+[    0.732332] mtk-pcie 1fa91000.pcie: host bridge /pcie@1fa91000 ranges:
+[    0.739559] mtk-pcie 1fa91000.pcie:      MEM 0x0020000000..0x0021ffffff -> 0x0020000000
+[    1.341486] mtk-pcie 1fa91000.pcie: Port0 link down
+[    1.347208] mtk-pcie 1fa91000.pcie: PCI host bridge to bus 0000:00
+[    1.354061] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    1.360093] pci_bus 0000:00: root bus resource [mem 0x20000000-0x21ffffff]
+[    1.368812] PCI: bus0: Fast back to back transfers enabled
+[    1.374877] pci_bus 0000:00: resource 4 [mem 0x20000000-0x21ffffff]
+[    1.382214] mtk-pcie 1fa92000.pcie: host bridge /pcie@1fa92000 ranges:
+[    1.389411] mtk-pcie 1fa92000.pcie:      MEM 0x0022000000..0x0023ffffff -> 0x0022000000
+[    1.919920] mtk-pcie 1fa92000.pcie: PCI host bridge to bus 0001:00
+[    1.926767] pci_bus 0001:00: root bus resource [bus 00-ff]
+[    1.932815] pci_bus 0001:00: root bus resource [mem 0x22000000-0x23ffffff]
+[    1.940695] pci 0001:00:01.0: [14c3:0811] type 01 class 0x060400 PCIe Root Port
+[    1.949011] pci 0001:00:01.0: BAR 0: can't handle BAR larger than 4GB (size 0x200000000)
+[    1.957922] pci 0001:00:01.0: BAR 0 [mem size 0x00000001 64bit pref disabled]
+[    1.965808] pci 0001:00:01.0: PCI bridge to [bus 00]
+[    1.971334] pci 0001:00:01.0:   bridge window [mem 0x00000000-0x000fffff]
+[    1.981115] PCI: bus0: Fast back to back transfers disabled
+[    1.987293] pci 0001:00:01.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[    1.996820] pci 0001:01:00.0: [14c3:7915] type 00 class 0x000280 PCIe Endpoint
+[    2.005224] pci 0001:01:00.0: BAR 0 [mem 0x00000000-0x000fffff 64bit pref]
+[    2.012826] pci 0001:01:00.0: BAR 2 [mem 0x00000000-0x00003fff 64bit pref]
+[    2.020411] pci 0001:01:00.0: BAR 4 [mem 0x00000000-0x00000fff 64bit pref]
+[    2.028700] pci 0001:01:00.0: supports D1 D2
+[    2.033430] pci 0001:01:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+[    2.041163] pci 0001:01:00.0: 2.000 Gb/s available PCIe bandwidth, limited by 2.5 GT/s PCIe x1 link at 0001:00:01.0 (capable of 4.000 Gb/s with 5.0 GT/s PCIe x1 link)
+[    2.058036] PCI: bus1: Fast back to back transfers disabled
+[    2.064206] pci_bus 0001:01: busn_res: [bus 01-ff] end is updated to 01
+[    2.071556] pci 0001:00:01.0: bridge window [mem 0x22000000-0x221fffff]: assigned
+[    2.079792] pci 0001:00:01.0: BAR 0 [mem 0x22200000 64bit pref disabled]: assigned
+[    2.088184] pci 0001:00:01.0: BAR 0: error updating (0x2220000c != 0x0000000c)
+[    2.096184] pci 0001:01:00.0: BAR 0 [mem 0x22000000-0x220fffff 64bit pref]: assigned
+[    2.104800] pci 0001:01:00.0: BAR 2 [mem 0x22100000-0x22103fff 64bit pref]: assigned
+[    2.113414] pci 0001:01:00.0: BAR 4 [mem 0x22104000-0x22104fff 64bit pref]: assigned
+[    2.122049] pci 0001:00:01.0: PCI bridge to [bus 01]
+[    2.127540] pci 0001:00:01.0:   bridge window [mem 0x22000000-0x221fffff]
+[    2.135087] pci_bus 0001:00: resource 4 [mem 0x22000000-0x23ffffff]
+[    2.141988] pci_bus 0001:01: resource 1 [mem 0x22000000-0x221fffff]
+[    2.149654] pcieport 0001:00:01.0: enabling device (0140 -> 0142)
+[    2.157214] pcieport 0001:00:01.0: PME: Signaling with IRQ 31
+Warning : ecnt_avs_handler r1 not support
+[    2.170151] airoha-cpu-pmdomain 1fa20000.cpufreq: ATF SMC not available, using direct PLL programming
+[    2.180333] airoha-cpu-pmdomain 1fa20000.cpufreq: CPU frequency: 950 MHz, XTAL Clock 25 MHz
+[    2.190536] Serial: 8250/16550 driver, 2 ports, IRQ sharing disabled
+[    2.198630] printk: legacy console [ttyS0] disabled
+[    2.205832] 1fbf0000.serial: ttyS0 at MMIO 0x1fbf0000 (irq = 32, base_baud = 115200) is a 16550
+[    2.215545] printk: legacy console [ttyS0] enabled
+[    2.215545] printk: legacy console [ttyS0] enabled
+[    2.225643] printk: legacy bootconsole [ns16550] disabled
+[    2.225643] printk: legacy bootconsole [ns16550] disabled
+[    2.239408] random: crng init done
+[    2.320564] airoha-spi 1fa10000.spi: boot type: NAND
+[    2.326205] spi-nand spi0.0: ESMT SPI NAND was found.
+[    2.331266] spi-nand spi0.0: 128 MiB, block size: 128 KiB, page size: 2048, OOB size: 64
+[   11.385604] 2 fixed-partitions partitions found on MTD device spi0.0
+[   11.392291] Creating 2 MTD partitions on "spi0.0":
+[   11.397101] 0x000000000000-0x000000100000 : "u-boot"
+[   11.404469] 0x000000100000-0x000008000000 : "ubi"
+[   11.585319] ubi0: attaching mtd1
+[   17.202813] ubi0: scanning is finished
+[   17.269929] ubi0: attached mtd1 (name "ubi", size 127 MiB)
+[   17.275477] ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+[   17.282374] ubi0: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+[   17.289162] ubi0: VID header offset: 2048 (aligned 2048), data offset: 4096
+[   17.296138] ubi0: good PEBs: 1016, bad PEBs: 0, corrupted PEBs: 0
+[   17.302244] ubi0: user volume: 5, internal volumes: 1, max. volumes count: 128
+[   17.309466] ubi0: max/mean erase counter: 4/2, WL threshold: 4096, image sequence number: 0
+[   17.317825] ubi0: available PEBs: 0, total reserved PEBs: 1016, PEBs reserved for bad PEB handling: 20
+[   17.327162] ubi0: background thread "ubi_bgt0d" started, PID 158
+[   17.328233] block ubiblock0_3: created from ubi0:3(fit)
+[   17.418860] airoha_eth 1fb50000.ethernet: Starting PPE Initialization
+[   17.426094] airoha_eth 1fb50000.ethernet: Flushing 512 SRAM entries
+[   17.434636] airoha_eth 1fb50000.ethernet: PPE Initialization completed successfully
+[   17.445277] airoha_eth 1fb50000.ethernet: Setting CPU port for PPE 0, fport 1 to CDM1
+[   17.453157] airoha_eth 1fb50000.ethernet: Initializing UPD mem for port id 1
+[C0]core freq at 333000000 Hz
+
+[C0]timer_init: Timer clk is running at 125 Mhz
+
+[C0]npu_gre_tunnel_tx_header_init L15 gre_tx_head_addr[0]=0x8400351c
+
+[C0]npu_gre_tunnel_tx_header_init L15 gre_tx_head_addr[1]=0x84003544
+
+[C0][NPU] ba_node_init...
+
+[C0]baNode_array_init
+
+[C0]counter_init:2
+
+[C0][NPU] queue_mutex_init...
+
+[C1]core1_main
+
+[C2]timer_isr  Store Value 1e903000, val[C2]core2_main
+
+[C2]do npu_enq_deq_init
+
+[C3]core3_main
+
+[C3]core3_main for npu tunnel offload v21
+
+[C3]npu bridge buf init sucess
+
+[   18.011729] xhci-mtk 1fab0000.usb: supply vbus not found, using dummy regulator
+[   18.019189] xhci-mtk 1fab0000.usb: supply vusb33 not found, using dummy regulator
+[   18.040986] airoha-usb-phy 1fad0000.phy: Frequency not detected, using default SR calibration.
+[   18.054174] xhci-mtk 1fab0000.usb: xHCI Host Controller
+[   18.059434] xhci-mtk 1fab0000.usb: new USB bus registered, assigned bus number 1
+[   18.070803] xhci-mtk 1fab0000.usb: hcc params 0x01400f98 hci version 0x110 quirks 0x0000000000200010
+[   18.080032] xhci-mtk 1fab0000.usb: irq 45, io mem 0x1fab0000
+[   18.085883] xhci-mtk 1fab0000.usb: xHCI Host Controller
+[   18.091123] xhci-mtk 1fab0000.usb: new USB bus registered, assigned bus number 2
+[   18.098560] xhci-mtk 1fab0000.usb: Host supports USB 3.2 Enhanced SuperSpeed
+[   18.106358] hub 1-0:1.0: USB hub found
+[   18.110270] hub 1-0:1.0: 2 ports detected
+[   18.115090] usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+[   18.123921] hub 2-0:1.0: USB hub found
+[   18.127837] hub 2-0:1.0: 1 port detected
+[   18.132997] i2c-mt7621 1fbf8000.i2c0: clock 100 kHz
+[   18.153520] inside-secure-eip93 1fb70000.crypto: EIP93:3:0:1,PE(0xfe007:0x41710041)
+[   18.162048] NET: Registered PF_INET6 protocol family
+[   18.168300] Segment Routing with IPv6
+[   18.172097] In-situ OAM (IOAM) with IPv6
+[   18.176117] NET: Registered PF_PACKET protocol family
+[   18.181516] 8021q: 802.1Q VLAN Support v1.8
+[   18.185847] Registering SWP/SWPB emulation handler
+[   18.208762] FIT: Detected U-Boot 2026.01-OpenWrt-r34771-7658a9ea318
+[   18.215087] FIT: Selected configuration: "config-1" (OpenWrt tplink_xx230v-v1)
+[   18.222390] FIT:           kernel sub-image 0x00001000..0x0055bc1f "kernel-1" (ARM OpenWrt Linux-6.18.34) 
+[   18.232073] FIT:          flat_dt sub-image 0x0055c000..0x005602be "fdt-1" (ARM OpenWrt tplink_xx230v-v1 device tree blob) 
+[   18.243240] FIT:       filesystem sub-image 0x00561000..0x0111ffff "rootfs-1" (ARM OpenWrt tplink_xx230v-v1 rootfs) 
+[   18.254339] block ubiblock0_3: mapped 1 uImage.FIT filesystem sub-image as /dev/fit0
+[   18.350260] mt7530-mmio 1fb58000.switch: configuring for fixed/internal link mode
+[   18.358030] mt7530-mmio 1fb58000.switch lan1 (uninitialized): PHY [mt7530-0:09] driver [Airoha EN7523 PHY] (irq=POLL)
+[   18.368786] mt7530-mmio 1fb58000.switch: Link is Up - 10Gbps/Full - flow control rx/tx
+[   18.372936] mt7530-mmio 1fb58000.switch lan2 (uninitialized): PHY [mt7530-0:0a] driver [Airoha EN7523 PHY] (irq=POLL)
+[   18.389214] mt7530-mmio 1fb58000.switch lan3 (uninitialized): PHY [mt7530-0:0b] driver [Airoha EN7523 PHY] (irq=POLL)
+[   18.401931] mt7530-mmio 1fb58000.switch wan (uninitialized): PHY [mt7530-0:0c] driver [Airoha EN7523 PHY] (irq=POLL)
+[   18.414068] airoha_eth 1fb50000.ethernet eth0: entered promiscuous mode
+[   18.420751] DSA: tree 0 setup
+[   18.424731] clk: Disabling unused clocks
+[   18.428679] PM: genpd: Disabling unused power domains
+[   18.446027] Freeing unused kernel image (initmem) memory: 12288K
+[   18.452406] Run /init as init process
+[   19.044342] init: Console is alive
+[   19.048020] init: - watchdog -
+[   19.070205] kmodloader: loading kernel modules from /etc/modules-boot.d/*
+[   19.087030] gpio_button_hotplug: loading out-of-tree module taints kernel.
+[   19.123667] usbcore: registered new interface driver usb-storage
+[   19.130272] kmodloader: done loading kernel modules from /etc/modules-boot.d/*
+[   19.150952] init: - preinit -
+Cannot parse config file '/etc/fw_env.config': No such file or directory
+Failed to find NVMEM device
+[   19.724015] airoha_eth 1fb50000.ethernet: Setting PPE 0 MTU for index 1 to 1504
+[   19.732339] mt7530-mmio 1fb58000.switch lan1: configuring for phy/internal link mode
+Press the [f] key and hit [enter] to enter failsafe mode
 Press the [1], [2], [3] or [4] key and hit [enter] to select the debug level
-[   23.369769] procd: - early -
-[   23.372808] procd: - watchdog -
-[   23.906065] procd: - watchdog -
-[   23.909767] procd: - ubus -
-[   23.965993] procd: - init -
+grep: /etc/fw_env.config: No such file or directory
+- generating board file -
+[   24.279345] procd: - early -
+[   24.282490] procd: - watchdog -
+[   24.819049] procd: - watchdog -
+[   24.823079] procd: - ubus -
+[   24.879958] procd: - init -
 Please press Enter to activate this console.
-[   24.346709] kmodloader: loading kernel modules from /etc/modules.d/*
-[   24.664569] i2c_dev: i2c /dev entries driver
-[   24.670596] GACT probability on
-[   24.674954] Mirror/redirect action on
-[   24.706765] u32 classifier
-[   24.709495]     input device check on
-[   24.713156]     Actions configured
-[   24.743321] ntfs3: Enabled Linux POSIX ACLs support
-[   24.769282] Loading modules backported from Linux version v6.18.26-0-g1fe060681
-[   24.776797] Backport generated by backports.git 6ecbb44
-[   24.861872] usbcore: registered new interface driver ums-alauda
-[   24.870384] usbcore: registered new interface driver ums-cypress
-[   24.880222] usbcore: registered new interface driver ums-datafab
-[   24.889784] usbcore: registered new interface driver ums-freecom
-[   24.897623] usbcore: registered new interface driver ums-isd200
-[   24.908578] usbcore: registered new interface driver ums-jumpshot
-[   24.927512] usbcore: registered new interface driver ums-karma
-[   24.948936] usbcore: registered new interface driver ums-sddr09
-[   24.968011] usbcore: registered new interface driver ums-sddr55
-[   24.976395] usbcore: registered new interface driver ums-usbat
-[   25.066122] xt_time: kernel timezone is -0000
-[   25.205899] urngd: v1.0.2 started.
-[   25.237255] mt7915e 0001:01:00.0: enabling device (0140 -> 0142)
-[   25.405883] mt7915e 0001:01:00.0: HW/SW Version: 0x8a108a10, Build Time: 20240429200716a
-[   25.433402] mt7915e 0001:01:00.0: WM Firmware Version: ____000000, Build Time: 20240429200752
-[   25.477349] mt7915e 0001:01:00.0: WA Firmware Version: DEV_000000, Build Time: 20240429200812
-[   25.615577] mt7915e 0001:01:00.0: registering led 'mt76-phy0'
-[   25.688253] mt7915e 0001:01:00.0: registering led 'mt76-phy1'
-[   25.816393] PPP generic driver version 2.4.2
-[   25.823296] NET: Registered PF_PPPOX protocol family
-[   25.832235] wireguard: WireGuard 1.0.0 loaded. See www.wireguard.com for information.
-[   25.840177] wireguard: Copyright (C) 2015-2019 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.
-[   25.891165] kmodloader: done loading kernel modules from /etc/modules.d/*
-[   38.632076] mt7530-mmio 1fb58000.switch lan1: configuring for phy/internal link mode
-[   38.653041] br-lan: port 1(lan1) entered blocking state
-[   38.658412] br-lan: port 1(lan1) entered disabled state
-[   38.663731] mt7530-mmio 1fb58000.switch lan1: entered allmulticast mode
-[   38.670419] airoha_eth 1fb50000.ethernet eth0: entered allmulticast mode
-[   38.677506] mt7530-mmio 1fb58000.switch lan1: entered promiscuous mode
-[   38.737026] mt7530-mmio 1fb58000.switch lan2: configuring for phy/internal link mode
-[   38.750548] br-lan: port 2(lan2) entered blocking state
-[   38.755914] br-lan: port 2(lan2) entered disabled state
-[   38.761234] mt7530-mmio 1fb58000.switch lan2: entered allmulticast mode
-[   38.768249] mt7530-mmio 1fb58000.switch lan2: entered promiscuous mode
-[   38.793491] mt7530-mmio 1fb58000.switch lan3: configuring for phy/internal link mode
-[   38.808087] br-lan: port 3(lan3) entered blocking state
-[   38.813363] br-lan: port 3(lan3) entered disabled state
-[   38.818790] mt7530-mmio 1fb58000.switch lan3: entered allmulticast mode
-[   38.825905] mt7530-mmio 1fb58000.switch lan3: entered promiscuous mode
-[   38.833878] mt7530-mmio 1fb58000.switch lan3: Link is Up - 1Gbps/Full - flow control rx/tx
-[   38.842306] br-lan: port 3(lan3) entered blocking state
-[   38.847611] br-lan: port 3(lan3) entered forwarding state
-[   38.882305] mt7530-mmio 1fb58000.switch wan: configuring for phy/internal link mode
+[   25.315268] kmodloader: loading kernel modules from /etc/modules.d/*
+[   25.663811] i2c_dev: i2c /dev entries driver
+[   25.693430] ntfs3: Enabled Linux POSIX ACLs support
+[   25.706813] Loading modules backported from Linux version v6.18.26-0-g1fe060681
+[   25.714192] Backport generated by backports.git 6ecbb44
+[   25.791790] usbcore: registered new interface driver ums-alauda
+[   25.799033] usbcore: registered new interface driver ums-cypress
+[   25.822794] usbcore: registered new interface driver ums-datafab
+[   25.830107] usbcore: registered new interface driver ums-freecom
+[   25.843095] usbcore: registered new interface driver ums-isd200
+[   25.850463] usbcore: registered new interface driver ums-jumpshot
+[   25.872913] usbcore: registered new interface driver ums-karma
+[   25.880132] usbcore: registered new interface driver ums-sddr09
+[   25.902640] usbcore: registered new interface driver ums-sddr55
+[   25.909852] usbcore: registered new interface driver ums-usbat
+[   25.957388] xt_time: kernel timezone is -0000
+[   26.000563] urngd: v1.0.2 started.
+[   26.133554] mt7915e 0001:01:00.0: enabling device (0140 -> 0142)
+[   26.332106] mt7915e 0001:01:00.0: HW/SW Version: 0x8a108a10, Build Time: 20240429200716a
+[   26.350549] mt7915e 0001:01:00.0: WM Firmware Version: ____000000, Build Time: 20240429200752
+[   26.389168] mt7915e 0001:01:00.0: WA Firmware Version: DEV_000000, Build Time: 20240429200812
+[   26.601693] PPP generic driver version 2.4.2
+[   26.608284] NET: Registered PF_PPPOX protocol family
+[   26.617383] wireguard: WireGuard 1.0.0 loaded. See www.wireguard.com for information.
+[   26.625315] wireguard: Copyright (C) 2015-2019 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.
+[   26.649975] kmodloader: done loading kernel modules from /etc/modules.d/*
+[   35.629726] airoha_eth 1fb50000.ethernet: Setting PPE 0 MTU for index 1 to 1504
+[   35.643867] mt7530-mmio 1fb58000.switch lan1: configuring for phy/internal link mode
+[   35.658068] br-lan: port 1(lan1) entered blocking state
+[   35.663421] br-lan: port 1(lan1) entered disabled state
+[   35.668725] mt7530-mmio 1fb58000.switch lan1: entered allmulticast mode
+[   35.675469] airoha_eth 1fb50000.ethernet eth0: entered allmulticast mode
+[   35.682611] mt7530-mmio 1fb58000.switch lan1: entered promiscuous mode
+[   35.715911] mt7530-mmio 1fb58000.switch lan2: configuring for phy/internal link mode
+[   35.736836] br-lan: port 2(lan2) entered blocking state
+[   35.742240] br-lan: port 2(lan2) entered disabled state
+[   35.747537] mt7530-mmio 1fb58000.switch lan2: entered allmulticast mode
+[   35.754553] mt7530-mmio 1fb58000.switch lan2: entered promiscuous mode
+[   35.775810] mt7530-mmio 1fb58000.switch lan3: configuring for phy/internal link mode
+[   35.787939] mt7530-mmio 1fb58000.switch lan3: Link is Up - 1Gbps/Full - flow control rx/tx
+[   35.798198] br-lan: port 3(lan3) entered blocking state
+[   35.803572] br-lan: port 3(lan3) entered disabled state
+[   35.808887] mt7530-mmio 1fb58000.switch lan3: entered allmulticast mode
+[   35.815931] mt7530-mmio 1fb58000.switch lan3: entered promiscuous mode
+[   35.822749] br-lan: port 3(lan3) entered blocking state
+[   35.828011] br-lan: port 3(lan3) entered forwarding state
+[   35.843900] mt7530-mmio 1fb58000.switch wan: configuring for phy/internal link mode
+[   35.852877] mt7530-mmio 1fb58000.switch wan: Link is Up - 1Gbps/Full - flow control rx/tx
+[   49.547341] airoha_eth 1fb50000.ethernet: NPU not attached, setting up offload
+[   49.554999] airoha_eth 1fb50000.ethernet: Setting up PPE offload
+[   49.561180] airoha_eth 1fb50000.ethernet: Initializing PPE Hardware
+[   49.567534] airoha_eth 1fb50000.ethernet: Configuring PPE 0: SRAM entries 7, DRAM entries 4, stats entries -95
+[   49.578010] airoha_eth 1fb50000.ethernet: EN7523 PPE0 SRAM size mismatch: wrote 7, read 6, TB_CFG=e670fffc
+[   49.587745] airoha_eth 1fb50000.ethernet: PPE0 regs: GLO_CFG=0002070f FLOW_CFG=0000b300 TB_CFG=e670fffc TB_BASE=8980a000 BNDR=001e001e UNB_AGE=0001001e
+[   49.601665] airoha_eth 1fb50000.ethernet: Setting CPU port for PPE 0, fport 1 to CDM1
+[   49.609886] airoha_eth 1fb50000.ethernet: Setting PPE 0 MTU for index 1 to 1504
+[   49.642727] airoha_eth 1fb50000.ethernet: PPE offload setup completed successfully
 </nowiki>
 </WRAP>
 
@@ -4356,7 +4424,7 @@ RRM_EnqueueNeighborRep() : send Neighbor RSP
 {{tagpage>802.11ac}}
 {{tagpage>802.11abgn}}
 {{tagpage>802.11ax}}
-{{tagpage>AN7523}}
+{{tagpage>EN7523}}
 {{tagpage>GigabitEthernet}}
 {{tagpage>4Port}}
 {{tagpage>hwVLAN}}
