@@ -1,24 +1,25 @@
 # tcboot.bin struct
 
-```
-+-----------------------------------------------------------+
-|                 bl1.bin (0x0 - 0x800)                     |
-|               (First Stage Bootloader)                    |
-+-----------------------------------------------------------+
-|                                                           |
-|                        FIP (0x800)                        |
-|  +-----------------------------------------------------+  |
-|  |                       bl2.bin                       |  |
-|  |             (Trusted Boot Firmware)                 |  |
-|  +-----------------------------------------------------+  |
-|  |                      bl31.bin                       |  |
-|  |            (EL3 Runtime Software / SOC)             |  |
-|  +-----------------------------------------------------+  |
-|  |             uboot.bin.lzma (bl33.bin)               |  |
-|  |           (Non-Trusted World / Payload)             |  |
-|  +-----------------------------------------------------+  |
-|                                                           |
-+-----------------------------------------------------------+
+```mermaid
+flowchart TB
+    subgraph IMAGE["Imagem de boot"]
+        direction TB
+
+        BL1["bl1.bin<br/>0x0 – 0x800<br/><br/>First Stage Bootloader"]
+
+        subgraph FIP["FIP — início em 0x800"]
+            direction TB
+
+            BL2["bl2.bin<br/><br/>Trusted Boot Firmware"]
+            BL31["bl31.bin<br/><br/>EL3 Runtime Software / SoC"]
+            BL33["uboot.bin.lzma<br/>bl33.bin<br/><br/>Non-Trusted World / Payload"]
+
+            BL2 --> BL31
+            BL31 --> BL33
+        end
+
+        BL1 --> BL2
+    end
 ```
 
 ## EN7523/AN7523
